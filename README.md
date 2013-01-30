@@ -5,6 +5,8 @@ iPhone, iPad and iPod Manager!
 
 iGadgetManager is an utility to manage iDevices on Mac OS X 10.7.x-10.8.x.
 
+<img src="https://raw.github.com/iKorich/iGadgetManager/master/screenshot.png">
+
 Credits
 -------------
 
