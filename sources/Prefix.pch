@@ -1,0 +1,14 @@
+//
+// Prefix header for all source files of the 'sunfl0wer' target in the 'sunfl0wer' project
+//
+
+#ifdef __OBJC__
+	#import <Cocoa/Cocoa.h>
+	#import <QTKit/QTKit.h>
+#endif
+
+#ifdef DEBUG
+#define DBNSLog NSLog
+#else
+#define DBNSLog( s, ... )
+#endif
