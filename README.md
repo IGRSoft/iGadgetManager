@@ -30,6 +30,8 @@ If you have some problems, then visit http://www.libimobiledevice.org for more i
 
 Now you can build it in Xcode!
 
+Also there [latest build][1].
+
 Running
 -------------
 
@@ -44,3 +46,5 @@ Licence
 -------------
 
 This application is free open source software and licensed under the LGPL 2.1.
+
+[1]: http://downloads.igrsoft.com/app/iGadgetManager_latest.zip "latest build"
