@@ -1,6 +1,6 @@
 //
 //  MobileDeviceServer.h
-//  sunfl0wer
+//  iGadgetManager
 //
 //  Created by Vitalii Parovishnyk on 12/17/12.
 //

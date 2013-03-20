@@ -1,6 +1,6 @@
 //
 //  MobileDeviceServer.m
-//  sunfl0wer
+//  iGadgetManager
 //
 //  Created by Vitalii Parovishnyk on 12/17/12.
 //
@@ -63,7 +63,7 @@ static MobileDeviceServer* tmpSelf = nil;
 	afc_client_t afc;
 	screenshotr_client_t shotr;
 	
-	uint16_t shotrPort;
+	lockdownd_service_descriptor_t shotrDescriptor;
 }
 
 void device_event_cb(const idevice_event_t* event, void* userdata);
@@ -178,7 +178,7 @@ void status_cb(const char *operation, plist_t status, void *unused);
 	
  	lockdownd_error_t lockdownd_error = 0;
 	DBNSLog(@"INFO: Creating lockdownd client");
-	lockdownd_error = lockdownd_client_new_with_handshake(_device, &_lockdownd, "sunfl0wer");
+	lockdownd_error = lockdownd_client_new_with_handshake(_device, &_lockdownd, "iGadgetManager");
 	if(lockdownd_error != LOCKDOWN_E_SUCCESS) {
 		DBNSLog(@"ERROR: Cannot create lockdownd client");
 		return nil;
@@ -192,21 +192,21 @@ void status_cb(const char *operation, plist_t status, void *unused);
 	lockdownd_client_t client = [self getInfoForDevice:device];
 	
 	afc_client_t _afc = nil;
-	uint16_t port = 0;
+	lockdownd_service_descriptor_t descriptor = 0;
 	
 	if (!client) {
 		lockdownd_client_free(client);
 		return _afc;
 	}
 	
-	if ((lockdownd_start_service(client, "com.apple.afc", &port) != LOCKDOWN_E_SUCCESS) || !port)
+	if ((lockdownd_start_service(client, "com.apple.afc", &descriptor) != LOCKDOWN_E_SUCCESS) || !descriptor)
 	{
 		lockdownd_client_free(client);
 		return _afc;
 	}
 	
 	lockdownd_client_free(client);
-	afc_client_new(_device, port, &_afc);
+	afc_client_new(_device, descriptor, &_afc);
 	
 	return _afc;
 }
@@ -465,29 +465,29 @@ void device_event_cb(const idevice_event_t* event, void* userdata)
 
 - (NSArray*) appsList
 {
-	uint16_t port = 0;
+	lockdownd_service_descriptor_t descriptor = 0;
 	instproxy_client_t ipc = nil;
 	lockdownd_client_t client = [self getInfoForDevice:device];
 	sbservices_client_t sbs = nil;
 	if ((lockdownd_start_service
 		 (client, "com.apple.mobile.installation_proxy",
-		  &port) != LOCKDOWN_E_SUCCESS) || !port) {
+		  &descriptor) != LOCKDOWN_E_SUCCESS) || !descriptor) {
 			 DBNSLog(@"ERROR: Could not start com.apple.mobile.installation_proxy!");
 			 return nil;
 		 }
 	
-	if (instproxy_client_new(device, port, &ipc) != INSTPROXY_E_SUCCESS) {
+	if (instproxy_client_new(device, descriptor, &ipc) != INSTPROXY_E_SUCCESS) {
 		DBNSLog(@"ERROR: Could not connect to installation_proxy");
 		return nil;
 	}
 	
-	if ((lockdownd_start_service (client, "com.apple.springboardservices", &port) != LOCKDOWN_E_SUCCESS) || !port)
+	if ((lockdownd_start_service (client, "com.apple.springboardservices", &descriptor) != LOCKDOWN_E_SUCCESS) || !descriptor)
 	{
 		DBNSLog(@"INFO: Could not start com.apple.springboardservices!");
 	}
 	else
 	{
-		if (sbservices_client_new(device, port, &sbs) != INSTPROXY_E_SUCCESS) {
+		if (sbservices_client_new(device, descriptor, &sbs) != INSTPROXY_E_SUCCESS) {
 			DBNSLog(@"INFO: Could not connect to springboard");
 		}
 	}
@@ -611,7 +611,7 @@ NSString* load_icon (sbservices_client_t sbs, const char *_id)
 	BOOL isDir = NO;
 	NSError *error = nil;
 	
-	NSString *cache = [cachesPath stringByAppendingPathComponent:@"sunfl0wer"];
+	NSString *cache = [cachesPath stringByAppendingPathComponent:@"iGadgetManager"];
 	if ([fm fileExistsAtPath:cache isDirectory:&isDir] && isDir) {
 	}
 	else{
@@ -671,29 +671,29 @@ NSString* load_icon (sbservices_client_t sbs, const char *_id)
 
 - (void) deviceAFSUninstallAppID:(NSString*) appID
 {
-	uint16_t port = 0;
+	lockdownd_service_descriptor_t descriptor = 0;
 	instproxy_client_t ipc = nil;
 	lockdownd_client_t client = [self getInfoForDevice:device];
 	sbservices_client_t sbs = nil;
 	if ((lockdownd_start_service
 		 (client, "com.apple.mobile.installation_proxy",
-		  &port) != LOCKDOWN_E_SUCCESS) || !port) {
+		  &descriptor) != LOCKDOWN_E_SUCCESS) || !descriptor) {
 			 DBNSLog(@"ERROR: Could not start com.apple.mobile.installation_proxy!");
 			 return;
 		 }
 	
-	if (instproxy_client_new(device, port, &ipc) != INSTPROXY_E_SUCCESS) {
+	if (instproxy_client_new(device, descriptor, &ipc) != INSTPROXY_E_SUCCESS) {
 		DBNSLog(@"ERROR: Could not connect to installation_proxy");
 		return;
 	}
 	
-	if ((lockdownd_start_service (client, "com.apple.springboardservices", &port) != LOCKDOWN_E_SUCCESS) || !port)
+	if ((lockdownd_start_service (client, "com.apple.springboardservices", &descriptor) != LOCKDOWN_E_SUCCESS) || !descriptor)
 	{
 		DBNSLog(@"INFO: Could not start com.apple.springboardservices!");
 	}
 	else
 	{
-		if (sbservices_client_new(device, port, &sbs) != INSTPROXY_E_SUCCESS) {
+		if (sbservices_client_new(device, descriptor, &sbs) != INSTPROXY_E_SUCCESS) {
 			DBNSLog(@"INFO: Could not connect to springboard");
 		}
 	}
@@ -782,10 +782,10 @@ void status_cb(const char *operation, plist_t status, void *unused)
 	}
 	lockdownd_client_t lckd = [self getInfoForDevice:device];
 	
-	lockdownd_start_service(lckd, "com.apple.mobile.screenshotr", &shotrPort);
+	lockdownd_start_service(lckd, "com.apple.mobile.screenshotr", &shotrDescriptor);
 	lockdownd_client_free(lckd);
-	if (shotrPort > 0) {
-		if (screenshotr_client_new(device, shotrPort, &shotr) != SCREENSHOTR_E_SUCCESS) {
+	if (shotrDescriptor && shotrDescriptor->port > 0) {
+		if (screenshotr_client_new(device, shotrDescriptor, &shotr) != SCREENSHOTR_E_SUCCESS) {
 			printf("Could not connect to screenshotr!\n");
 		} else {
 			return true;
@@ -818,19 +818,19 @@ void status_cb(const char *operation, plist_t status, void *unused)
 {
 	lockdownd_client_t _lockdownd = [self getInfoForDevice:device];
 	diagnostics_relay_client_t diagnostics_client = NULL;
-	uint16_t port = 0;
+	lockdownd_service_descriptor_t descriptor = 0;
 	lockdownd_error_t ret = LOCKDOWN_E_UNKNOWN_ERROR;
 	diagnostics_relay_error_t result = DIAGNOSTICS_RELAY_E_UNKNOWN_ERROR;
 	
 	/*  attempt to use newer diagnostics service available on iOS 5 and later */
-	ret = lockdownd_start_service(_lockdownd, "com.apple.mobile.diagnostics_relay", &port);
+	ret = lockdownd_start_service(_lockdownd, "com.apple.mobile.diagnostics_relay", &descriptor);
 	if (ret != LOCKDOWN_E_SUCCESS) {
 		/*  attempt to use older diagnostics service */
-		ret = lockdownd_start_service(_lockdownd, "com.apple.iosdiagnostics.relay", &port);
+		ret = lockdownd_start_service(_lockdownd, "com.apple.iosdiagnostics.relay", &descriptor);
 	}
 	
-	if ((ret == LOCKDOWN_E_SUCCESS) && (port > 0)) {
-		if (diagnostics_relay_client_new(device, port, &diagnostics_client) != DIAGNOSTICS_RELAY_E_SUCCESS) {
+	if ((ret == LOCKDOWN_E_SUCCESS) && (descriptor && descriptor->port > 0)) {
+		if (diagnostics_relay_client_new(device, descriptor, &diagnostics_client) != DIAGNOSTICS_RELAY_E_SUCCESS) {
 			printf("Could not connect to diagnostics_relay!\n");
 		} else {
 			result = diagnostics_relay_restart(diagnostics_client, 0);
@@ -857,19 +857,19 @@ void status_cb(const char *operation, plist_t status, void *unused)
 {
 	lockdownd_client_t _lockdownd = [self getInfoForDevice:device];
 	diagnostics_relay_client_t diagnostics_client = NULL;
-	uint16_t port = 0;
+	lockdownd_service_descriptor_t descriptor = 0;
 	lockdownd_error_t ret = LOCKDOWN_E_UNKNOWN_ERROR;
 	diagnostics_relay_error_t result = DIAGNOSTICS_RELAY_E_UNKNOWN_ERROR;
 	
 	/*  attempt to use newer diagnostics service available on iOS 5 and later */
-	ret = lockdownd_start_service(_lockdownd, "com.apple.mobile.diagnostics_relay", &port);
+	ret = lockdownd_start_service(_lockdownd, "com.apple.mobile.diagnostics_relay", &descriptor);
 	if (ret != LOCKDOWN_E_SUCCESS) {
 		/*  attempt to use older diagnostics service */
-		ret = lockdownd_start_service(_lockdownd, "com.apple.iosdiagnostics.relay", &port);
+		ret = lockdownd_start_service(_lockdownd, "com.apple.iosdiagnostics.relay", &descriptor);
 	}
 	
-	if ((ret == LOCKDOWN_E_SUCCESS) && (port > 0)) {
-		if (diagnostics_relay_client_new(device, port, &diagnostics_client) != DIAGNOSTICS_RELAY_E_SUCCESS) {
+	if ((ret == LOCKDOWN_E_SUCCESS) && (descriptor && descriptor->port > 0)) {
+		if (diagnostics_relay_client_new(device, descriptor, &diagnostics_client) != DIAGNOSTICS_RELAY_E_SUCCESS) {
 			printf("Could not connect to diagnostics_relay!\n");
 		} else {
 			result = diagnostics_relay_shutdown(diagnostics_client, 0);

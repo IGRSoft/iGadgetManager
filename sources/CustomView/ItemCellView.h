@@ -1,6 +1,6 @@
 //
 //  ItemCellView.h
-//  sunfl0wer
+//  iGadgetManager
 //
 //  Created by Vitaly Parovishnik on 12/29/11.
 //  Copyright 2011 IGR Software. All rights reserved.

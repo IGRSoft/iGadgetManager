@@ -1,6 +1,6 @@
 //
 //  AppDelegate.m
-//  sunfl0wer
+//  iGadgetManager
 //
 //  Created by Vitalii Parovishnyk on 12/30/12.
 //  Copyright (c) 2012 IGR Software. All rights reserved.

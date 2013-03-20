@@ -1,6 +1,6 @@
 //
 //  NSColoredView.h
-//  sunfl0wer
+//  iGadgetManager
 //
 //  Created by Vitalii Parovishnyk on 12/27/12.
 //
