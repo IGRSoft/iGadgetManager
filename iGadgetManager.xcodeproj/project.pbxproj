@@ -14,8 +14,8 @@
 		A53A3C1F1690794D00C19F81 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A53A3C1E1690794D00C19F81 /* AppDelegate.m */; };
 		A56CD76816B2C835005BFDDA /* Devices.plist in Resources */ = {isa = PBXBuildFile; fileRef = A56CD76716B2C835005BFDDA /* Devices.plist */; };
 		A56CD76B16B2CC35005BFDDA /* devices in Resources */ = {isa = PBXBuildFile; fileRef = A56CD76A16B2CC35005BFDDA /* devices */; };
-		A586F5F61696E1A5008E9C21 /* libimobiledevice.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A586F5F51696E1A5008E9C21 /* libimobiledevice.3.dylib */; };
-		A586F5FB1696E212008E9C21 /* libimobiledevice.3.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A586F5F51696E1A5008E9C21 /* libimobiledevice.3.dylib */; };
+		A586F5F61696E1A5008E9C21 /* libimobiledevice.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A586F5F51696E1A5008E9C21 /* libimobiledevice.4.dylib */; };
+		A586F5FB1696E212008E9C21 /* libimobiledevice.4.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A586F5F51696E1A5008E9C21 /* libimobiledevice.4.dylib */; };
 		A586F5FD1696E217008E9C21 /* libusbmuxd.2.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A586F5F71696E1C9008E9C21 /* libusbmuxd.2.dylib */; };
 		A586F6271696F82D008E9C21 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A586F6261696F82D008E9C21 /* QTKit.framework */; };
 		A5C3296216B92F9B003EFD88 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A5C3296116B92F9B003EFD88 /* libxml2.2.dylib */; };
@@ -42,7 +42,7 @@
 				A5E89563169594CE009F7CA5 /* libplist.1.dylib in CopyFiles */,
 				A5C3296316B92F9E003EFD88 /* libxml2.2.dylib in CopyFiles */,
 				A586F5FD1696E217008E9C21 /* libusbmuxd.2.dylib in CopyFiles */,
-				A586F5FB1696E212008E9C21 /* libimobiledevice.3.dylib in CopyFiles */,
+				A586F5FB1696E212008E9C21 /* libimobiledevice.4.dylib in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,7 +79,7 @@
 		A586F5F21696DD91008E9C21 /* restore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = restore.h; sourceTree = "<group>"; };
 		A586F5F31696DD91008E9C21 /* sbservices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sbservices.h; sourceTree = "<group>"; };
 		A586F5F41696DD91008E9C21 /* screenshotr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = screenshotr.h; sourceTree = "<group>"; };
-		A586F5F51696E1A5008E9C21 /* libimobiledevice.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libimobiledevice.3.dylib; path = ../../../../../usr/local/lib/libimobiledevice.3.dylib; sourceTree = "<group>"; };
+		A586F5F51696E1A5008E9C21 /* libimobiledevice.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libimobiledevice.4.dylib; path = ../../../../../usr/local/lib/libimobiledevice.4.dylib; sourceTree = "<group>"; };
 		A586F5F71696E1C9008E9C21 /* libusbmuxd.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libusbmuxd.2.dylib; path = ../../../../../usr/local/lib/libusbmuxd.2.dylib; sourceTree = "<group>"; };
 		A586F6261696F82D008E9C21 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = System/Library/Frameworks/QTKit.framework; sourceTree = SDKROOT; };
 		A5C3296116B92F9B003EFD88 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = ../../../../../usr/local/lib/libxml2.2.dylib; sourceTree = "<group>"; };
@@ -106,7 +106,7 @@
 			files = (
 				A53A3C0C1690794D00C19F81 /* Cocoa.framework in Frameworks */,
 				A586F6271696F82D008E9C21 /* QTKit.framework in Frameworks */,
-				A586F5F61696E1A5008E9C21 /* libimobiledevice.3.dylib in Frameworks */,
+				A586F5F61696E1A5008E9C21 /* libimobiledevice.4.dylib in Frameworks */,
 				A5E8955E169594AC009F7CA5 /* libplist.1.dylib in Frameworks */,
 				A5EBFABB1690A0E100E003A2 /* libz.dylib in Frameworks */,
 				A5C3296216B92F9B003EFD88 /* libxml2.2.dylib in Frameworks */,
@@ -139,7 +139,7 @@
 			children = (
 				A586F6261696F82D008E9C21 /* QTKit.framework */,
 				A5E8955D169594AC009F7CA5 /* libplist.1.dylib */,
-				A586F5F51696E1A5008E9C21 /* libimobiledevice.3.dylib */,
+				A586F5F51696E1A5008E9C21 /* libimobiledevice.4.dylib */,
 				A5C3296116B92F9B003EFD88 /* libxml2.2.dylib */,
 				A586F5F71696E1C9008E9C21 /* libusbmuxd.2.dylib */,
 				A5EBFABA1690A0E000E003A2 /* libz.dylib */,
@@ -319,7 +319,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = "/bin/bash -e";
-			shellScript = "install_name_tool -change /usr/local/lib/libplist.1.dylib @executable_path/../Frameworks/libplist.1.dylib \"$TARGET_BUILD_DIR\"/\"$PRODUCT_NAME\".app/Contents/MacOS/\"$PRODUCT_NAME\"\ninstall_name_tool -change /usr/local/lib/libimobiledevice.3.dylib @executable_path/../Frameworks/libimobiledevice.3.dylib \"$TARGET_BUILD_DIR\"/\"$PRODUCT_NAME\".app/Contents/MacOS/\"$PRODUCT_NAME\"\ninstall_name_tool -change /usr/local/lib/libusbmuxd.2.dylib @executable_path/../Frameworks/libusbmuxd.2.dylib \"$TARGET_BUILD_DIR\"/\"$PRODUCT_NAME\".app/Contents/MacOS/\"$PRODUCT_NAME\"\ninstall_name_tool -change /usr/local/lib/libxml2.2.dylib @executable_path/../Frameworks/libxml2.2.dylib \"$TARGET_BUILD_DIR\"/\"$PRODUCT_NAME\".app/Contents/MacOS/\"$PRODUCT_NAME\"\n\ninstall_name_tool -change /usr/local/lib/libplist.1.dylib @loader_path/libplist.1.dylib \"$TARGET_BUILD_DIR\"/\"$PRODUCT_NAME\".app/Contents/Frameworks/libimobiledevice.3.dylib\ninstall_name_tool -change /usr/local/lib/libusbmuxd.2.dylib @loader_path/libusbmuxd.2.dylib \"$TARGET_BUILD_DIR\"/\"$PRODUCT_NAME\".app/Contents/Frameworks/libimobiledevice.3.dylib\ninstall_name_tool -change /usr/local/lib/libxml2.2.dylib @loader_path/libxml2.2.dylib \"$TARGET_BUILD_DIR\"/\"$PRODUCT_NAME\".app/Contents/Frameworks/libplist.1.dylib\ninstall_name_tool -change /usr/local/lib/libplist.1.dylib @loader_path/libplist.1.dylib \"$TARGET_BUILD_DIR\"/\"$PRODUCT_NAME\".app/Contents/Frameworks/libxml2.2.dylib\ninstall_name_tool -change /usr/local/lib/libplist.1.dylib @loader_path/libplist.1.dylib \"$TARGET_BUILD_DIR\"/\"$PRODUCT_NAME\".app/Contents/Frameworks/libusbmuxd.2.dylib";
+			shellScript = "install_name_tool -change /usr/local/lib/libplist.1.dylib @executable_path/../Frameworks/libplist.1.dylib \"$TARGET_BUILD_DIR\"/\"$PRODUCT_NAME\".app/Contents/MacOS/\"$PRODUCT_NAME\"\ninstall_name_tool -change /usr/local/lib/libimobiledevice.4.dylib @executable_path/../Frameworks/libimobiledevice.4.dylib \"$TARGET_BUILD_DIR\"/\"$PRODUCT_NAME\".app/Contents/MacOS/\"$PRODUCT_NAME\"\ninstall_name_tool -change /usr/local/lib/libusbmuxd.2.dylib @executable_path/../Frameworks/libusbmuxd.2.dylib \"$TARGET_BUILD_DIR\"/\"$PRODUCT_NAME\".app/Contents/MacOS/\"$PRODUCT_NAME\"\ninstall_name_tool -change /usr/local/lib/libxml2.2.dylib @executable_path/../Frameworks/libxml2.2.dylib \"$TARGET_BUILD_DIR\"/\"$PRODUCT_NAME\".app/Contents/MacOS/\"$PRODUCT_NAME\"\n\ninstall_name_tool -change /usr/local/lib/libplist.1.dylib @loader_path/libplist.1.dylib \"$TARGET_BUILD_DIR\"/\"$PRODUCT_NAME\".app/Contents/Frameworks/libimobiledevice.4.dylib\ninstall_name_tool -change /usr/local/lib/libusbmuxd.2.dylib @loader_path/libusbmuxd.2.dylib \"$TARGET_BUILD_DIR\"/\"$PRODUCT_NAME\".app/Contents/Frameworks/libimobiledevice.3.dylib\ninstall_name_tool -change /usr/local/lib/libxml2.2.dylib @loader_path/libxml2.2.dylib \"$TARGET_BUILD_DIR\"/\"$PRODUCT_NAME\".app/Contents/Frameworks/libplist.1.dylib\ninstall_name_tool -change /usr/local/lib/libplist.1.dylib @loader_path/libplist.1.dylib \"$TARGET_BUILD_DIR\"/\"$PRODUCT_NAME\".app/Contents/Frameworks/libxml2.2.dylib\ninstall_name_tool -change /usr/local/lib/libplist.1.dylib @loader_path/libplist.1.dylib \"$TARGET_BUILD_DIR\"/\"$PRODUCT_NAME\".app/Contents/Frameworks/libusbmuxd.2.dylib";
 		};
 /* End PBXShellScriptBuildPhase section */
 

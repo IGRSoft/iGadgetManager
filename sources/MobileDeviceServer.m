@@ -62,8 +62,6 @@ static MobileDeviceServer* tmpSelf = nil;
 	lockdownd_client_t lockdownd;
 	afc_client_t afc;
 	screenshotr_client_t shotr;
-	
-	lockdownd_service_descriptor_t shotrDescriptor;
 }
 
 void device_event_cb(const idevice_event_t* event, void* userdata);
@@ -751,8 +749,7 @@ void status_cb(const char *operation, plist_t status, void *unused)
 {
 	NSImage* img = nil;
 	
-	if (!shotr) {
-		[self createScrenshotService];
+	if (!shotr || ![self createScrenshotService]) {
 		printf("Could not connect to screenshotr!\n");
 	} else {
 		char *imgdata = NULL;
@@ -773,6 +770,7 @@ void status_cb(const char *operation, plist_t status, void *unused)
 
 - (bool) createScrenshotService
 {
+	bool ret = false;
 	if (!deviceConnected) {
 		return false;
 	}
@@ -781,20 +779,28 @@ void status_cb(const char *operation, plist_t status, void *unused)
 		shotr = nil;
 	}
 	lockdownd_client_t lckd = [self getInfoForDevice:device];
-	
+	lockdownd_service_descriptor_t shotrDescriptor = NULL;
 	lockdownd_start_service(lckd, "com.apple.mobile.screenshotr", &shotrDescriptor);
 	lockdownd_client_free(lckd);
-	if (shotrDescriptor && shotrDescriptor->port > 0) {
-		if (screenshotr_client_new(device, shotrDescriptor, &shotr) != SCREENSHOTR_E_SUCCESS) {
-			printf("Could not connect to screenshotr!\n");
-		} else {
-			return true;
+	if (shotrDescriptor) {
+		if (shotrDescriptor->port && shotrDescriptor->port > 0) {
+			if (screenshotr_client_new(device, shotrDescriptor, &shotr) != SCREENSHOTR_E_SUCCESS) {
+				printf("Could not connect to screenshotr!\n");
+			} else {
+				ret = true;
+			}
 		}
+		else
+		{
+			printf("Could not start screenshotr service! Remember that you have to mount the Developer disk image on your device if you want to use the screenshotr service.\n");
+		}
+		
+		lockdownd_service_descriptor_free(shotrDescriptor);
 	} else {
 		printf("Could not start screenshotr service! Remember that you have to mount the Developer disk image on your device if you want to use the screenshotr service.\n");
 	}
 	
-	return false;
+	return ret;
 }
 
 - (bool) deviceEnterRecovery
