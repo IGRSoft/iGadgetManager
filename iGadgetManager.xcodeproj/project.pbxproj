@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A50CF2D7172AAE5300EFE81E /* libplist.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A50CF2D5172AAE5300EFE81E /* libplist.dylib */; };
+		A50CF2D8172AAE5300EFE81E /* libusbmuxd.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A50CF2D6172AAE5300EFE81E /* libusbmuxd.dylib */; };
+		A50CF2D9172AAE6900EFE81E /* libplist.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A50CF2D5172AAE5300EFE81E /* libplist.dylib */; };
+		A50CF2DA172AAE6B00EFE81E /* libusbmuxd.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A50CF2D6172AAE5300EFE81E /* libusbmuxd.dylib */; };
+		A50CF2DC172AAF9F00EFE81E /* libxml.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A50CF2DB172AAF9F00EFE81E /* libxml.dylib */; };
+		A50CF2DD172AAFA400EFE81E /* libxml.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A50CF2DB172AAF9F00EFE81E /* libxml.dylib */; };
 		A53A3C0C1690794D00C19F81 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A53A3C0B1690794D00C19F81 /* Cocoa.framework */; };
 		A53A3C161690794D00C19F81 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A53A3C141690794D00C19F81 /* InfoPlist.strings */; };
 		A53A3C181690794D00C19F81 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A53A3C171690794D00C19F81 /* main.m */; };
@@ -14,21 +20,13 @@
 		A53A3C1F1690794D00C19F81 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A53A3C1E1690794D00C19F81 /* AppDelegate.m */; };
 		A56CD76816B2C835005BFDDA /* Devices.plist in Resources */ = {isa = PBXBuildFile; fileRef = A56CD76716B2C835005BFDDA /* Devices.plist */; };
 		A56CD76B16B2CC35005BFDDA /* devices in Resources */ = {isa = PBXBuildFile; fileRef = A56CD76A16B2CC35005BFDDA /* devices */; };
-		A586F5F61696E1A5008E9C21 /* libimobiledevice.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A586F5F51696E1A5008E9C21 /* libimobiledevice.4.dylib */; };
-		A586F5FB1696E212008E9C21 /* libimobiledevice.4.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A586F5F51696E1A5008E9C21 /* libimobiledevice.4.dylib */; };
-		A586F5FD1696E217008E9C21 /* libusbmuxd.2.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A586F5F71696E1C9008E9C21 /* libusbmuxd.2.dylib */; };
 		A586F6271696F82D008E9C21 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A586F6261696F82D008E9C21 /* QTKit.framework */; };
-		A5C3296216B92F9B003EFD88 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A5C3296116B92F9B003EFD88 /* libxml2.2.dylib */; };
-		A5C3296316B92F9E003EFD88 /* libxml2.2.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A5C3296116B92F9B003EFD88 /* libxml2.2.dylib */; };
 		A5C3296C16B954E9003EFD88 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5C3296A16B954E9003EFD88 /* MainMenu.xib */; };
 		A5E0B28816B278F800E8627E /* icon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = A5E0B28716B278F800E8627E /* icon.iconset */; };
 		A5E8951616958641009F7CA5 /* LBProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E8951516958641009F7CA5 /* LBProgressBar.m */; };
-		A5E8955E169594AC009F7CA5 /* libplist.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E8955D169594AC009F7CA5 /* libplist.1.dylib */; };
-		A5E89563169594CE009F7CA5 /* libplist.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A5E8955D169594AC009F7CA5 /* libplist.1.dylib */; };
 		A5EBFA4716907AA800E003A2 /* DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EBFA4616907AA800E003A2 /* DeviceInfo.m */; };
 		A5EBFA4B16907B1400E003A2 /* MobileDeviceServer.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EBFA4A16907B1400E003A2 /* MobileDeviceServer.m */; };
 		A5EBFA4F16907B5500E003A2 /* ItemCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EBFA4E16907B5500E003A2 /* ItemCellView.m */; };
-		A5EBFABB1690A0E100E003A2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A5EBFABA1690A0E000E003A2 /* libz.dylib */; };
 		A5EBFABE1690A40D00E003A2 /* NSColoredView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EBFABD1690A40D00E003A2 /* NSColoredView.m */; };
 /* End PBXBuildFile section */
 
@@ -39,16 +37,19 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A5E89563169594CE009F7CA5 /* libplist.1.dylib in CopyFiles */,
-				A5C3296316B92F9E003EFD88 /* libxml2.2.dylib in CopyFiles */,
-				A586F5FD1696E217008E9C21 /* libusbmuxd.2.dylib in CopyFiles */,
-				A586F5FB1696E212008E9C21 /* libimobiledevice.4.dylib in CopyFiles */,
+				A50CF2D9172AAE6900EFE81E /* libplist.dylib in CopyFiles */,
+				A50CF2DA172AAE6B00EFE81E /* libusbmuxd.dylib in CopyFiles */,
+				A50CF2DD172AAFA400EFE81E /* libxml.dylib in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A50CF2D5172AAE5300EFE81E /* libplist.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libplist.dylib; path = Frameworks/libplist.dylib; sourceTree = "<group>"; };
+		A50CF2D6172AAE5300EFE81E /* libusbmuxd.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libusbmuxd.dylib; path = Frameworks/libusbmuxd.dylib; sourceTree = "<group>"; };
+		A50CF2DB172AAF9F00EFE81E /* libxml.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml.dylib; path = Frameworks/libxml.dylib; sourceTree = "<group>"; };
+		A50CF2DF172AB60200EFE81E /* add_libs.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = add_libs.sh; sourceTree = SOURCE_ROOT; };
 		A53A3C071690794D00C19F81 /* iGadget Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iGadget Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A53A3C0B1690794D00C19F81 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		A53A3C0E1690794D00C19F81 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -79,22 +80,17 @@
 		A586F5F21696DD91008E9C21 /* restore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = restore.h; sourceTree = "<group>"; };
 		A586F5F31696DD91008E9C21 /* sbservices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sbservices.h; sourceTree = "<group>"; };
 		A586F5F41696DD91008E9C21 /* screenshotr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = screenshotr.h; sourceTree = "<group>"; };
-		A586F5F51696E1A5008E9C21 /* libimobiledevice.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libimobiledevice.4.dylib; path = ../../../../../usr/local/lib/libimobiledevice.4.dylib; sourceTree = "<group>"; };
-		A586F5F71696E1C9008E9C21 /* libusbmuxd.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libusbmuxd.2.dylib; path = ../../../../../usr/local/lib/libusbmuxd.2.dylib; sourceTree = "<group>"; };
 		A586F6261696F82D008E9C21 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = System/Library/Frameworks/QTKit.framework; sourceTree = SDKROOT; };
-		A5C3296116B92F9B003EFD88 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = ../../../../../usr/local/lib/libxml2.2.dylib; sourceTree = "<group>"; };
 		A5C3296B16B954E9003EFD88 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		A5E0B28716B278F800E8627E /* icon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = icon.iconset; sourceTree = "<group>"; };
 		A5E8951416958641009F7CA5 /* LBProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBProgressBar.h; sourceTree = "<group>"; };
 		A5E8951516958641009F7CA5 /* LBProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBProgressBar.m; sourceTree = "<group>"; };
-		A5E8955D169594AC009F7CA5 /* libplist.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libplist.1.dylib; path = ../../../../../usr/local/lib/libplist.1.dylib; sourceTree = "<group>"; };
 		A5EBFA4516907AA800E003A2 /* DeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfo.h; sourceTree = "<group>"; };
 		A5EBFA4616907AA800E003A2 /* DeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfo.m; sourceTree = "<group>"; };
 		A5EBFA4916907B1400E003A2 /* MobileDeviceServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobileDeviceServer.h; sourceTree = "<group>"; };
 		A5EBFA4A16907B1400E003A2 /* MobileDeviceServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MobileDeviceServer.m; sourceTree = "<group>"; };
 		A5EBFA4D16907B5500E003A2 /* ItemCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemCellView.h; sourceTree = "<group>"; };
 		A5EBFA4E16907B5500E003A2 /* ItemCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemCellView.m; sourceTree = "<group>"; };
-		A5EBFABA1690A0E000E003A2 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		A5EBFABC1690A40D00E003A2 /* NSColoredView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSColoredView.h; sourceTree = "<group>"; };
 		A5EBFABD1690A40D00E003A2 /* NSColoredView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSColoredView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,10 +102,9 @@
 			files = (
 				A53A3C0C1690794D00C19F81 /* Cocoa.framework in Frameworks */,
 				A586F6271696F82D008E9C21 /* QTKit.framework in Frameworks */,
-				A586F5F61696E1A5008E9C21 /* libimobiledevice.4.dylib in Frameworks */,
-				A5E8955E169594AC009F7CA5 /* libplist.1.dylib in Frameworks */,
-				A5EBFABB1690A0E100E003A2 /* libz.dylib in Frameworks */,
-				A5C3296216B92F9B003EFD88 /* libxml2.2.dylib in Frameworks */,
+				A50CF2D7172AAE5300EFE81E /* libplist.dylib in Frameworks */,
+				A50CF2D8172AAE5300EFE81E /* libusbmuxd.dylib in Frameworks */,
+				A50CF2DC172AAF9F00EFE81E /* libxml.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,12 +132,10 @@
 		A53A3C0A1690794D00C19F81 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A50CF2DB172AAF9F00EFE81E /* libxml.dylib */,
+				A50CF2D5172AAE5300EFE81E /* libplist.dylib */,
+				A50CF2D6172AAE5300EFE81E /* libusbmuxd.dylib */,
 				A586F6261696F82D008E9C21 /* QTKit.framework */,
-				A5E8955D169594AC009F7CA5 /* libplist.1.dylib */,
-				A586F5F51696E1A5008E9C21 /* libimobiledevice.4.dylib */,
-				A5C3296116B92F9B003EFD88 /* libxml2.2.dylib */,
-				A586F5F71696E1C9008E9C21 /* libusbmuxd.2.dylib */,
-				A5EBFABA1690A0E000E003A2 /* libz.dylib */,
 				A53A3C0B1690794D00C19F81 /* Cocoa.framework */,
 				A53A3C0D1690794D00C19F81 /* Other Frameworks */,
 			);
@@ -225,6 +218,7 @@
 		A5EBFA5D1690946300E003A2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A50CF2DF172AB60200EFE81E /* add_libs.sh */,
 				A53A3C131690794D00C19F81 /* Info.plist */,
 				A53A3C141690794D00C19F81 /* InfoPlist.strings */,
 				A53A3C1A1690794D00C19F81 /* Credits.rtf */,
@@ -250,6 +244,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A53A3C251690794E00C19F81 /* Build configuration list for PBXNativeTarget "iGadgetManager" */;
 			buildPhases = (
+				A50CF2DE172AB5E000EFE81E /* ShellScript */,
 				A53A3C031690794D00C19F81 /* Sources */,
 				A53A3C041690794D00C19F81 /* Frameworks */,
 				A53A3C051690794D00C19F81 /* Resources */,
@@ -308,6 +303,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		A50CF2DE172AB5E000EFE81E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = /Users/korich/Project/Develop/iGadgetManager/add_libs.sh;
+		};
 		A5E895651695974B009F7CA5 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 12;
@@ -319,7 +327,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = "/bin/bash -e";
-			shellScript = "install_name_tool -change /usr/local/lib/libplist.1.dylib @executable_path/../Frameworks/libplist.1.dylib \"$TARGET_BUILD_DIR\"/\"$PRODUCT_NAME\".app/Contents/MacOS/\"$PRODUCT_NAME\"\ninstall_name_tool -change /usr/local/lib/libimobiledevice.4.dylib @executable_path/../Frameworks/libimobiledevice.4.dylib \"$TARGET_BUILD_DIR\"/\"$PRODUCT_NAME\".app/Contents/MacOS/\"$PRODUCT_NAME\"\ninstall_name_tool -change /usr/local/lib/libusbmuxd.2.dylib @executable_path/../Frameworks/libusbmuxd.2.dylib \"$TARGET_BUILD_DIR\"/\"$PRODUCT_NAME\".app/Contents/MacOS/\"$PRODUCT_NAME\"\ninstall_name_tool -change /usr/local/lib/libxml2.2.dylib @executable_path/../Frameworks/libxml2.2.dylib \"$TARGET_BUILD_DIR\"/\"$PRODUCT_NAME\".app/Contents/MacOS/\"$PRODUCT_NAME\"\n\ninstall_name_tool -change /usr/local/lib/libplist.1.dylib @loader_path/libplist.1.dylib \"$TARGET_BUILD_DIR\"/\"$PRODUCT_NAME\".app/Contents/Frameworks/libimobiledevice.4.dylib\ninstall_name_tool -change /usr/local/lib/libusbmuxd.2.dylib @loader_path/libusbmuxd.2.dylib \"$TARGET_BUILD_DIR\"/\"$PRODUCT_NAME\".app/Contents/Frameworks/libimobiledevice.3.dylib\ninstall_name_tool -change /usr/local/lib/libxml2.2.dylib @loader_path/libxml2.2.dylib \"$TARGET_BUILD_DIR\"/\"$PRODUCT_NAME\".app/Contents/Frameworks/libplist.1.dylib\ninstall_name_tool -change /usr/local/lib/libplist.1.dylib @loader_path/libplist.1.dylib \"$TARGET_BUILD_DIR\"/\"$PRODUCT_NAME\".app/Contents/Frameworks/libxml2.2.dylib\ninstall_name_tool -change /usr/local/lib/libplist.1.dylib @loader_path/libplist.1.dylib \"$TARGET_BUILD_DIR\"/\"$PRODUCT_NAME\".app/Contents/Frameworks/libusbmuxd.2.dylib";
+			shellScript = "install_name_tool -change /usr/local/lib/libplist.1.dylib @executable_path/../Frameworks/libplist.dylib \"$TARGET_BUILD_DIR\"/\"$PRODUCT_NAME\".app/Contents/MacOS/\"$PRODUCT_NAME\"\ninstall_name_tool -change /usr/local/lib/libusbmuxd.2.dylib @executable_path/../Frameworks/libusbmuxd.dylib \"$TARGET_BUILD_DIR\"/\"$PRODUCT_NAME\".app/Contents/MacOS/\"$PRODUCT_NAME\"\ninstall_name_tool -change /usr/local/lib/libxml2.2.dylib @executable_path/../Frameworks/libxml.dylib \"$TARGET_BUILD_DIR\"/\"$PRODUCT_NAME\".app/Contents/MacOS/\"$PRODUCT_NAME\"\n\ninstall_name_tool -change /usr/local/lib/libxml2.2.dylib @loader_path/libxml.dylib \"$TARGET_BUILD_DIR\"/\"$PRODUCT_NAME\".app/Contents/Frameworks/libplist.dylib\ninstall_name_tool -change /usr/local/lib/libplist.1.dylib @loader_path/libplist.dylib \"$TARGET_BUILD_DIR\"/\"$PRODUCT_NAME\".app/Contents/Frameworks/libusbmuxd.dylib";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -432,14 +440,20 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/External\"",
+					"\"$(SDKROOT)/usr/include/openssl\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = sources/Prefix.pch;
 				HEADER_SEARCH_PATHS = /usr/local/include;
 				INFOPLIST_FILE = Info.plist;
-				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/Frameworks\"";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-limobiledevice",
+					"-lz",
+					"-lcrypto",
+					"-lssl",
+				);
 				PRODUCT_NAME = "iGadget Manager";
 				WRAPPER_EXTENSION = app;
 			};
@@ -456,14 +470,20 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/External\"",
+					"\"$(SDKROOT)/usr/include/openssl\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = sources/Prefix.pch;
 				HEADER_SEARCH_PATHS = /usr/local/include;
 				INFOPLIST_FILE = Info.plist;
-				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/Frameworks\"";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-limobiledevice",
+					"-lz",
+					"-lcrypto",
+					"-lssl",
+				);
 				PRODUCT_NAME = "iGadget Manager";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
