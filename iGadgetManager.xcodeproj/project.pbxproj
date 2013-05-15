@@ -439,7 +439,6 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/External\"",
 					"\"$(SDKROOT)/usr/include/openssl\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -469,7 +468,6 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/External\"",
 					"\"$(SDKROOT)/usr/include/openssl\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
