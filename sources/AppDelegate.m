@@ -8,14 +8,16 @@
 
 #import "AppDelegate.h"
 #import "DeviceInfo.h"
-#if !__has_feature(objc_arc)
+#import "Helper.h"
+
 #import <QTKit/QTKit.h>
-#endif
+
 @interface AppDelegate (Private)
 
 @end
 
 #define FPS 24
+#define MOVIE_FILE_NAME @"/Users/Shared/iGadget_Manager_Movie.mov"
 
 @implementation AppDelegate
 
@@ -29,6 +31,12 @@
 	[self.mobileDeviceServer setDelegate:self];
 	
 	m_ImageCaptureTimer = nil;
+	
+	self.useRecordVideo = false;
+	
+	if (![Helper isVideoRecordSupported]) {
+		[self.btnSaveVideo setEnabled:NO];
+	}
 }
 
 - (void)newDeviceDetected:(NSString*)connectedDevice
@@ -62,11 +70,10 @@
 	int tabSelection = [[tabViewItem identifier] intValue];
 	if (tabSelection == 3)
 	{
-#if !__has_feature(objc_arc)
 		pos = 0;
-#endif
+
 		[self.mobileDeviceServer createScrenshotService];
-		m_ImageCaptureTimer = [NSTimer scheduledTimerWithTimeInterval:0.005
+		m_ImageCaptureTimer = [NSTimer scheduledTimerWithTimeInterval:0.001
 															target:self
 														  selector:@selector(handleImageCaptureTimerTimer:)
 														  userInfo:nil
@@ -74,13 +81,12 @@
 	}
 	else
 	{
-#if !__has_feature(objc_arc)
 		if (movie) {
 			[movie stop];
 			movie = nil;
 			pos = 0;
 		}
-#endif
+		
 		[m_ImageCaptureTimer invalidate];
 		m_ImageCaptureTimer = nil;
 	}
@@ -92,12 +98,19 @@
 	dispatch_async(queue, ^{
 		dispatch_async(dispatch_get_main_queue(), ^{
 			NSImage *img = [self.mobileDeviceServer takeScreenshot];
-			if (img) {
-					[_imageCapture setImage:img];
-#if !__has_feature(objc_arc)
+			if (img)
+			{
+				[_imageCapture setImage:img];
+
+				if (_useRecordVideo) {
 					NSError *error = nil;
 					if (!movie) {
-						movie = [[QTMovie alloc] initToWritableFile:@"/Users/Shared/My Recorded Movie.mov" error:&error];
+						NSFileManager *fm = [NSFileManager defaultManager];
+						if ([fm fileExistsAtPath:MOVIE_FILE_NAME isDirectory:nil]) {
+							[fm removeItemAtPath:MOVIE_FILE_NAME error:&error];
+						}
+						
+						movie = [[QTMovie alloc] initToWritableFile:MOVIE_FILE_NAME error:&error];
 						if (error) {
 							NSLog(@"Could not create QTMovie: %@", [error localizedDescription]);
 							return;
@@ -111,9 +124,9 @@
 									 [NSNumber numberWithInt:codecHighQuality], QTAddImageCodecQuality, nil]];
 					
 					[movie updateMovieFile];
-#endif
+				}
 			}
-			});
+		});
 	});
 		
 }
@@ -148,4 +161,8 @@
 
 - (void)applicationWillTerminate:(NSNotification *)notification { }
 
+- (IBAction)onTouchSaveVideo:(NSButton*)sender
+{
+	self.useRecordVideo = sender.state;
+}
 @end

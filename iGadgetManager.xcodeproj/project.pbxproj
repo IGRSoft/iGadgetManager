@@ -13,6 +13,8 @@
 		A50CF2DA172AAE6B00EFE81E /* libusbmuxd.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A50CF2D6172AAE5300EFE81E /* libusbmuxd.dylib */; };
 		A50CF2DC172AAF9F00EFE81E /* libxml.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A50CF2DB172AAF9F00EFE81E /* libxml.dylib */; };
 		A50CF2DD172AAFA400EFE81E /* libxml.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A50CF2DB172AAF9F00EFE81E /* libxml.dylib */; };
+		A513292617844C25006D3CDE /* LBProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A513292517844C25006D3CDE /* LBProgressBar.m */; };
+		A513293117845966006D3CDE /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = A5132930178458F4006D3CDE /* Helper.m */; };
 		A53A3C0C1690794D00C19F81 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A53A3C0B1690794D00C19F81 /* Cocoa.framework */; };
 		A53A3C161690794D00C19F81 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A53A3C141690794D00C19F81 /* InfoPlist.strings */; };
 		A53A3C181690794D00C19F81 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A53A3C171690794D00C19F81 /* main.m */; };
@@ -23,7 +25,6 @@
 		A586F6271696F82D008E9C21 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A586F6261696F82D008E9C21 /* QTKit.framework */; };
 		A5C3296C16B954E9003EFD88 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5C3296A16B954E9003EFD88 /* MainMenu.xib */; };
 		A5E0B28816B278F800E8627E /* icon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = A5E0B28716B278F800E8627E /* icon.iconset */; };
-		A5E8951616958641009F7CA5 /* LBProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E8951516958641009F7CA5 /* LBProgressBar.m */; };
 		A5EBFA4716907AA800E003A2 /* DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EBFA4616907AA800E003A2 /* DeviceInfo.m */; };
 		A5EBFA4B16907B1400E003A2 /* MobileDeviceServer.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EBFA4A16907B1400E003A2 /* MobileDeviceServer.m */; };
 		A5EBFA4F16907B5500E003A2 /* ItemCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EBFA4E16907B5500E003A2 /* ItemCellView.m */; };
@@ -50,6 +51,10 @@
 		A50CF2D6172AAE5300EFE81E /* libusbmuxd.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libusbmuxd.dylib; path = Frameworks/libusbmuxd.dylib; sourceTree = "<group>"; };
 		A50CF2DB172AAF9F00EFE81E /* libxml.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml.dylib; path = Frameworks/libxml.dylib; sourceTree = "<group>"; };
 		A50CF2DF172AB60200EFE81E /* add_libs.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = add_libs.sh; sourceTree = SOURCE_ROOT; };
+		A513292417844C25006D3CDE /* LBProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBProgressBar.h; sourceTree = "<group>"; };
+		A513292517844C25006D3CDE /* LBProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBProgressBar.m; sourceTree = "<group>"; };
+		A513292F178458F4006D3CDE /* Helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
+		A5132930178458F4006D3CDE /* Helper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
 		A53A3C071690794D00C19F81 /* iGadget Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iGadget Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A53A3C0B1690794D00C19F81 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		A53A3C0E1690794D00C19F81 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -83,8 +88,6 @@
 		A586F6261696F82D008E9C21 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = System/Library/Frameworks/QTKit.framework; sourceTree = SDKROOT; };
 		A5C3296B16B954E9003EFD88 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		A5E0B28716B278F800E8627E /* icon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = icon.iconset; sourceTree = "<group>"; };
-		A5E8951416958641009F7CA5 /* LBProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBProgressBar.h; sourceTree = "<group>"; };
-		A5E8951516958641009F7CA5 /* LBProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBProgressBar.m; sourceTree = "<group>"; };
 		A5EBFA4516907AA800E003A2 /* DeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfo.h; sourceTree = "<group>"; };
 		A5EBFA4616907AA800E003A2 /* DeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfo.m; sourceTree = "<group>"; };
 		A5EBFA4916907B1400E003A2 /* MobileDeviceServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobileDeviceServer.h; sourceTree = "<group>"; };
@@ -111,6 +114,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A513292317844C25006D3CDE /* LBProgressBar */ = {
+			isa = PBXGroup;
+			children = (
+				A513292417844C25006D3CDE /* LBProgressBar.h */,
+				A513292517844C25006D3CDE /* LBProgressBar.m */,
+			);
+			path = LBProgressBar;
+			sourceTree = "<group>";
+		};
+		A513292E178458F4006D3CDE /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				A513292F178458F4006D3CDE /* Helper.h */,
+				A5132930178458F4006D3CDE /* Helper.m */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		A53A3BFC1690794D00C19F81 = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +176,7 @@
 		A53A3C111690794D00C19F81 /* sources */ = {
 			isa = PBXGroup;
 			children = (
+				A513292E178458F4006D3CDE /* Helper */,
 				A586F5E41696DD91008E9C21 /* libimobiledevice */,
 				A5EBFA981690A01400E003A2 /* External */,
 				A5EBFA4C16907B5500E003A2 /* CustomView */,
@@ -205,8 +227,6 @@
 		A5EBFA4C16907B5500E003A2 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
-				A5E8951416958641009F7CA5 /* LBProgressBar.h */,
-				A5E8951516958641009F7CA5 /* LBProgressBar.m */,
 				A5EBFABC1690A40D00E003A2 /* NSColoredView.h */,
 				A5EBFABD1690A40D00E003A2 /* NSColoredView.m */,
 				A5EBFA4D16907B5500E003A2 /* ItemCellView.h */,
@@ -233,6 +253,7 @@
 		A5EBFA981690A01400E003A2 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				A513292317844C25006D3CDE /* LBProgressBar */,
 			);
 			path = External;
 			sourceTree = SOURCE_ROOT;
@@ -339,10 +360,11 @@
 				A53A3C181690794D00C19F81 /* main.m in Sources */,
 				A53A3C1F1690794D00C19F81 /* AppDelegate.m in Sources */,
 				A5EBFA4716907AA800E003A2 /* DeviceInfo.m in Sources */,
+				A513293117845966006D3CDE /* Helper.m in Sources */,
 				A5EBFA4B16907B1400E003A2 /* MobileDeviceServer.m in Sources */,
+				A513292617844C25006D3CDE /* LBProgressBar.m in Sources */,
 				A5EBFA4F16907B5500E003A2 /* ItemCellView.m in Sources */,
 				A5EBFABE1690A40D00E003A2 /* NSColoredView.m in Sources */,
-				A5E8951616958641009F7CA5 /* LBProgressBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -749,7 +749,11 @@ void status_cb(const char *operation, plist_t status, void *unused)
 {
 	NSImage* img = nil;
 	
-	if (!shotr || ![self createScrenshotService]) {
+	if (!shotr) {
+		[self createScrenshotService];
+	}
+	
+	if (!shotr) {
 		printf("Could not connect to screenshotr!\n");
 	} else {
 		char *imgdata = NULL;
