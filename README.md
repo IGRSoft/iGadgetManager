@@ -3,7 +3,7 @@ iGadget Manager
 
 iPhone, iPad and iPod Manager!
 
-iGadgetManager is an utility to manage iDevices on Mac OS X 10.7.x-10.8.x.
+iGadgetManager is an utility to manage iDevices on Mac OS X 10.7.x-10.9.x.
 
 <img src="https://raw.github.com/iKorich/iGadgetManager/master/screenshot.png">
 
@@ -17,7 +17,7 @@ Prepare
 
 * git clone git://github.com/iKorich/iGadgetManager.git
 * git submodule update (or git submodule update --init --recursive)
-* cd /External/libimobiledevice
+* cd ./External/libimobiledevice
 * git checkout osx
 * git submodule update (or git submodule update --init --recursive)
 
