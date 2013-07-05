@@ -12,23 +12,19 @@ Credits
 
 Developer: Vitalii (Korich) Parovishnyk 
 
+Prepare
+-------------
+
+* git clone git://github.com/iKorich/iGadgetManager.git
+* git submodule update --init --recursive (or git submodule update --init --recursive)
+* cd /External/libimobiledevice
+* git checkout osx
+* git submodule update --init --recursive (or git submodule update --init --recursive)
+
 Building
 -------------
 
-Fetch your dependencies. Because these vary from distro to distro, I won't list specific packages here, that said you need developement packages for: libimobiledevice, libplist, libusb, usbmuxd, gnutls, libxml2, libglib2, libusb and libzip.
-
-For libxml use "./configure --without-python --without-lzma".
-
-Then:
-
-* git clone git://github.com/boxingsquirrel/ideviceactivate.git
-* cd ideviceactivate
-* make
-* sudo make install
-
-If you have some problems, then visit http://www.libimobiledevice.org for more info
-
-Now you can build it in Xcode!
+Just build in Xcode!
 
 Also there [latest build][1].
 
