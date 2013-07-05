@@ -589,7 +589,7 @@ void device_event_cb(const idevice_event_t* event, void* userdata)
 		free(s_dispName);
 		free(s_appid);
 	}
-	plist_free(apps);
+	//plist_free(apps);
 	instproxy_client_free(ipc);
 	lockdownd_client_free(client);
 	if (sbs) sbservices_client_free(sbs);
