@@ -165,4 +165,26 @@
 {
 	self.useRecordVideo = sender.state;
 }
+
+- (IBAction) goToURL:(id)sender
+{
+	NSURL *url = [self getHiperLinkForTool:[sender title]];
+	
+	[[NSWorkspace sharedWorkspace] openURL:url];
+}
+
+- (NSURL*) getHiperLinkForTool:(NSString*)tool
+{
+	tool = [tool lowercaseString];
+	
+	if ([tool isEqualToString:@"donate"]) {
+		return [NSURL URLWithString:@"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ENPVXEYJUQU9G"];
+	}
+	else if ([tool isEqualToString:@"igr software"]) {
+		return [NSURL URLWithString:@"http://www.igrsoft.com"];
+	}
+	
+	return [NSURL URLWithString:@"http://www.igrsoft.com"];
+}
+
 @end

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4457.9" systemVersion="13A497d" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4471.1" systemVersion="13A510d" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment defaultVersion="1070" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4457.9"/>
-        <plugIn identifier="com.apple.QTKitIBPlugin" version="3330"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4471.1"/>
+        <plugIn identifier="com.apple.QTKitIBPlugin" version="3332"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -94,14 +94,14 @@
         </menu>
         <window title="iGadget Manager" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="371">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
-            <rect key="contentRect" x="335" y="390" width="656" height="607"/>
+            <rect key="contentRect" x="335" y="390" width="656" height="639"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1178"/>
             <view key="contentView" id="372">
-                <rect key="frame" x="0.0" y="0.0" width="656" height="607"/>
+                <rect key="frame" x="0.0" y="0.0" width="656" height="639"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <tabView initialItem="540" id="536">
-                        <rect key="frame" x="13" y="10" width="630" height="591"/>
+                        <rect key="frame" x="13" y="42" width="630" height="591"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <font key="font" metaFont="system"/>
                         <tabViewItems>
@@ -668,11 +668,29 @@
                             <outlet property="delegate" destination="494" id="704"/>
                         </connections>
                     </tabView>
+                    <button id="mtY-1K-UVe">
+                        <rect key="frame" x="281" y="20" width="94" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="smallSquare" title="IGR Software" bezelStyle="smallSquare" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="okf-UI-z9q">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
+                    <button id="SBp-9Q-z8a">
+                        <rect key="frame" x="562" y="12" width="74" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="bevel" title="Donate" bezelStyle="rounded" image="btn_donate_SM" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="QxC-p8-whO">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" size="12" name="Helvetica-BoldOblique"/>
+                        </buttonCell>
+                    </button>
                 </subviews>
             </view>
         </window>
         <customObject id="494" customClass="AppDelegate">
             <connections>
+                <action selector="goToURL:" destination="mtY-1K-UVe" id="giI-4q-DeE"/>
+                <action selector="goToURL:" destination="SBp-9Q-z8a" id="s7h-wE-pkv"/>
                 <action selector="onTouchSaveVideo:" destination="00P-kz-Obc" id="JVL-q3-VRr"/>
                 <outlet property="btnSaveVideo" destination="00P-kz-Obc" id="cot-vJ-U0w"/>
                 <outlet property="deviceInfo" destination="648" id="674"/>
@@ -719,66 +737,7 @@
     <resources>
         <image name="NSApplicationIcon" width="128" height="128"/>
         <image name="NSStopProgressFreestandingTemplate" width="83" height="83"/>
+        <image name="btn_donate_SM" width="74" height="26"/>
         <image name="sunfl0wer" width="512" height="512"/>
     </resources>
-    <classes>
-        <class className="AppDelegate" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AppDelegate.h"/>
-            <relationships>
-                <relationship kind="action" name="onTouchSaveVideo:" candidateClass="NSButton"/>
-                <relationship kind="outlet" name="btnSaveVideo" candidateClass="NSButton"/>
-                <relationship kind="outlet" name="deviceInfo" candidateClass="DeviceInfo"/>
-                <relationship kind="outlet" name="imageCapture" candidateClass="NSImageView"/>
-                <relationship kind="outlet" name="tabView" candidateClass="NSTabView"/>
-                <relationship kind="outlet" name="window" candidateClass="NSWindow"/>
-            </relationships>
-        </class>
-        <class className="DeviceInfo" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DeviceInfo.h"/>
-            <relationships>
-                <relationship kind="action" name="rebootDevice:"/>
-                <relationship kind="action" name="recoveryModeDevice:"/>
-                <relationship kind="action" name="shutdownDevice:"/>
-                <relationship kind="action" name="unistallApp:"/>
-                <relationship kind="outlet" name="appsList" candidateClass="NSTableView"/>
-                <relationship kind="outlet" name="coloredView" candidateClass="NSColoredView"/>
-                <relationship kind="outlet" name="deviceActivated" candidateClass="NSTextField"/>
-                <relationship kind="outlet" name="deviceBaseband" candidateClass="NSTextField"/>
-                <relationship kind="outlet" name="deviceBluetoothAddress" candidateClass="NSTextField"/>
-                <relationship kind="outlet" name="deviceBootloader" candidateClass="NSTextField"/>
-                <relationship kind="outlet" name="deviceCPU" candidateClass="NSTextField"/>
-                <relationship kind="outlet" name="deviceCapacity" candidateClass="NSTextField"/>
-                <relationship kind="outlet" name="deviceColor" candidateClass="NSTextField"/>
-                <relationship kind="outlet" name="deviceFilledCapacity" candidateClass="NSTextField"/>
-                <relationship kind="outlet" name="deviceFreeCapacity" candidateClass="NSTextField"/>
-                <relationship kind="outlet" name="deviceHardwareModel" candidateClass="NSTextField"/>
-                <relationship kind="outlet" name="deviceHardwarePlatform" candidateClass="NSTextField"/>
-                <relationship kind="outlet" name="deviceModelNumber" candidateClass="NSTextField"/>
-                <relationship kind="outlet" name="deviceName" candidateClass="NSTextField"/>
-                <relationship kind="outlet" name="deviceOSVersion" candidateClass="NSTextField"/>
-                <relationship kind="outlet" name="devicePhoneNumber" candidateClass="NSTextField"/>
-                <relationship kind="outlet" name="devicePic" candidateClass="NSImageView"/>
-                <relationship kind="outlet" name="deviceProdictType" candidateClass="NSTextField"/>
-                <relationship kind="outlet" name="deviceSerialNumber" candidateClass="NSTextField"/>
-                <relationship kind="outlet" name="deviceUDID" candidateClass="NSTextField"/>
-                <relationship kind="outlet" name="deviceWiFiAddress" candidateClass="NSTextField"/>
-                <relationship kind="outlet" name="originalDeviceName" candidateClass="NSTextField"/>
-                <relationship kind="outlet" name="progressIndicator" candidateClass="LBProgressBar"/>
-                <relationship kind="outlet" name="spiner" candidateClass="NSProgressIndicator"/>
-            </relationships>
-        </class>
-        <class className="ItemCellView" superclassName="NSTableCellView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ItemCellView.h"/>
-            <relationships>
-                <relationship kind="outlet" name="detailTextField" candidateClass="NSTextField"/>
-                <relationship kind="outlet" name="detailUninstallButton" candidateClass="NSButton"/>
-            </relationships>
-        </class>
-        <class className="LBProgressBar" superclassName="NSProgressIndicator">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LBProgressBar.h"/>
-        </class>
-        <class className="NSColoredView" superclassName="NSView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSColoredView.h"/>
-        </class>
-    </classes>
 </document>
