@@ -18,8 +18,8 @@
 	NSTimer*						m_ImageCaptureTimer;
 	NSOperationQueue*				m_OperationQueue;
 
-	QTMovie*						movie;
-	int								pos;
+	QTMovie*						m_QTMovie;
+	int								m_iMoviePos;
 }
 
 @property (assign) IBOutlet NSWindow *window;
@@ -29,7 +29,8 @@
 @property (nonatomic, strong) IBOutlet NSTabView	*tabView;
 @property (nonatomic, strong) IBOutlet NSImageView	*imageCapture;
 @property (nonatomic, strong) IBOutlet NSButton		*btnSaveVideo;
-@property (nonatomic) bool useRecordVideo;
+@property (nonatomic) bool							useRecordVideo;
+@property (nonatomic) bool							isDeviceConnected;
 
 - (IBAction)onTouchSaveVideo:(NSButton*)sender;
 

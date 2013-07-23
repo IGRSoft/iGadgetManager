@@ -31,7 +31,7 @@
 	[self.mobileDeviceServer setDelegate:self];
 	
 	m_ImageCaptureTimer = nil;
-	
+	self.isDeviceConnected = false;
 	self.useRecordVideo = false;
 	
 	if (![Helper isVideoRecordSupported]) {
@@ -42,6 +42,8 @@
 - (void)newDeviceDetected:(NSString*)connectedDevice
 {
 	DBNSLog(@"Device: %@ is connected", connectedDevice);
+	
+	self.isDeviceConnected = (connectedDevice != nil);
 	
 	if (m_DevicesDict && [m_DevicesDict count] > 0)
 	{		
@@ -55,11 +57,18 @@
 - (void)deviceRemoved
 {
 	DBNSLog(@"Device is disconnected");
+	
+	self.isDeviceConnected = false;
+	
 	[m_OperationQueue cancelAllOperations];
 }
 
 - (void)updateAppList
 {
+	if (!self.isDeviceConnected) {
+		return;
+	}
+	
 	[m_OperationQueue addOperationWithBlock:^{
 		[self.deviceInfo updateAppList];
 	}];
@@ -67,10 +76,14 @@
 
 - (void)tabView:(NSTabView *)tabView didSelectTabViewItem:(NSTabViewItem *)tabViewItem
 {
+	if (!self.isDeviceConnected) {
+		return;
+	}
+	
 	int tabSelection = [[tabViewItem identifier] intValue];
 	if (tabSelection == 3)
 	{
-		pos = 0;
+		m_iMoviePos = 0;
 
 		[self.mobileDeviceServer createScrenshotService];
 		m_ImageCaptureTimer = [NSTimer scheduledTimerWithTimeInterval:0.001
@@ -81,10 +94,10 @@
 	}
 	else
 	{
-		if (movie) {
-			[movie stop];
-			movie = nil;
-			pos = 0;
+		if (m_QTMovie) {
+			[m_QTMovie stop];
+			m_QTMovie = nil;
+			m_iMoviePos = 0;
 		}
 		
 		[m_ImageCaptureTimer invalidate];
@@ -104,26 +117,26 @@
 
 				if (_useRecordVideo) {
 					NSError *error = nil;
-					if (!movie) {
+					if (!m_QTMovie) {
 						NSFileManager *fm = [NSFileManager defaultManager];
 						if ([fm fileExistsAtPath:MOVIE_FILE_NAME isDirectory:nil]) {
 							[fm removeItemAtPath:MOVIE_FILE_NAME error:&error];
 						}
 						
-						movie = [[QTMovie alloc] initToWritableFile:MOVIE_FILE_NAME error:&error];
+						m_QTMovie = [[QTMovie alloc] initToWritableFile:MOVIE_FILE_NAME error:&error];
 						if (error) {
 							NSLog(@"Could not create QTMovie: %@", [error localizedDescription]);
 							return;
 						}
-						[movie setAttribute:[NSNumber numberWithBool:YES] forKey:QTMovieEditableAttribute];
+						[m_QTMovie setAttribute:[NSNumber numberWithBool:YES] forKey:QTMovieEditableAttribute];
 					}
 					
-					[movie addImage:img
-						forDuration:QTMakeTime(pos++, FPS)
+					[m_QTMovie addImage:img
+						forDuration:QTMakeTime(m_iMoviePos++, FPS)
 					 withAttributes:[NSDictionary dictionaryWithObjectsAndKeys:@"jpeg", QTAddImageCodecType,
 									 [NSNumber numberWithInt:codecHighQuality], QTAddImageCodecQuality, nil]];
 					
-					[movie updateMovieFile];
+					[m_QTMovie updateMovieFile];
 				}
 			}
 		});

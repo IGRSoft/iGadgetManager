@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4471.1" systemVersion="13A510d" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4471.1" systemVersion="13A524d" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment defaultVersion="1070" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4471.1"/>
@@ -624,36 +624,62 @@
                                     </subviews>
                                 </view>
                             </tabViewItem>
-                            <tabViewItem label="Utils" identifier="4" id="699">
+                            <tabViewItem label="File Manager" identifier="4" id="699">
                                 <view key="view" id="700">
                                     <rect key="frame" x="10" y="33" width="610" height="545"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <button verticalHuggingPriority="750" id="712">
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="FGf-cP-2iO">
+                                            <rect key="frame" x="14" y="420" width="602" height="122"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="In Progress" id="T8P-gE-h4k">
+                                                <font key="font" size="32" name="LucidaGrande"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="Utils" identifier="5" id="w4Y-Lp-bzf">
+                                <view key="view" id="Zza-Lk-wZc">
+                                    <rect key="frame" x="10" y="33" width="610" height="545"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button verticalHuggingPriority="750" id="A9U-n2-Eie">
                                             <rect key="frame" x="87" y="514" width="133" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="push" title="Reboot" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="713">
+                                            <buttonCell key="cell" type="push" title="Reboot" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="v21-Ls-bJC">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
+                                            <connections>
+                                                <binding destination="494" name="enabled" keyPath="self.isDeviceConnected" id="uux-1s-kS5"/>
+                                            </connections>
                                         </button>
-                                        <button verticalHuggingPriority="750" id="714">
+                                        <button verticalHuggingPriority="750" id="bEz-Rt-qzd">
                                             <rect key="frame" x="87" y="481" width="133" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="push" title="Shutdown" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="715">
+                                            <buttonCell key="cell" type="push" title="Shutdown" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mef-Wr-Gvw">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
+                                            <connections>
+                                                <binding destination="494" name="enabled" keyPath="self.isDeviceConnected" id="Rpj-kS-xj6"/>
+                                            </connections>
                                         </button>
-                                        <button verticalHuggingPriority="750" id="716">
+                                        <button verticalHuggingPriority="750" id="kb5-6v-urt">
                                             <rect key="frame" x="87" y="448" width="133" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="push" title="Enter Recovery" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="717">
+                                            <buttonCell key="cell" type="push" title="Enter Recovery" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zhe-Xi-g4d">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
+                                            <connections>
+                                                <binding destination="494" name="enabled" keyPath="self.isDeviceConnected" id="nru-nu-eGG"/>
+                                            </connections>
                                         </button>
-                                        <box autoresizesSubviews="NO" horizontalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="718">
+                                        <box autoresizesSubviews="NO" horizontalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="L9O-2k-AQV">
                                             <rect key="frame" x="303" y="16" width="5" height="526"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
@@ -702,9 +728,9 @@
         <customObject id="420" customClass="NSFontManager"/>
         <customObject id="648" customClass="DeviceInfo">
             <connections>
-                <action selector="rebootDevice:" destination="712" id="719"/>
-                <action selector="recoveryModeDevice:" destination="716" id="720"/>
-                <action selector="shutdownDevice:" destination="714" id="721"/>
+                <action selector="rebootDevice:" destination="A9U-n2-Eie" id="9Wb-qz-6do"/>
+                <action selector="recoveryModeDevice:" destination="kb5-6v-urt" id="jIA-pc-kpL"/>
+                <action selector="shutdownDevice:" destination="bEz-Rt-qzd" id="Bdz-CI-sc0"/>
                 <action selector="unistallApp:" destination="688" id="691"/>
                 <outlet property="appsList" destination="632" id="671"/>
                 <outlet property="coloredView" destination="544" id="670"/>
@@ -736,7 +762,7 @@
     </objects>
     <resources>
         <image name="NSApplicationIcon" width="128" height="128"/>
-        <image name="NSStopProgressFreestandingTemplate" width="83" height="83"/>
+        <image name="NSStopProgressFreestandingTemplate" width="12" height="12"/>
         <image name="btn_donate_SM" width="74" height="26"/>
         <image name="sunfl0wer" width="512" height="512"/>
     </resources>

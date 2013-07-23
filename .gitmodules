@@ -1,1 +1,4 @@
 
+[submodule "External/libimobiledevice"]
+	path = External/libimobiledevice
+	url = https://github.com/iKorich/libimobiledevice.git
