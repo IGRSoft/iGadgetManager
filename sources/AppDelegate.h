@@ -11,15 +11,19 @@
 
 @class DeviceInfo;
 @class QTMovie;
+@class FileSystemNode;
 
-@interface AppDelegate : NSObject <NSApplicationDelegate, MobileDeviceServerDelegate, NSTabViewDelegate> {
+@interface AppDelegate : NSObject <NSApplicationDelegate, MobileDeviceServerDelegate, NSTabViewDelegate, NSBrowserDelegate> {
 	
 	NSMutableDictionary*			m_DevicesDict;
 	NSTimer*						m_ImageCaptureTimer;
 	NSOperationQueue*				m_OperationQueue;
 
+@private
 	QTMovie*						m_QTMovie;
 	int								m_iMoviePos;
+
+	FileSystemNode					*_rootNode;
 }
 
 @property (assign) IBOutlet NSWindow *window;
@@ -29,6 +33,7 @@
 @property (nonatomic, strong) IBOutlet NSTabView	*tabView;
 @property (nonatomic, strong) IBOutlet NSImageView	*imageCapture;
 @property (nonatomic, strong) IBOutlet NSButton		*btnSaveVideo;
+@property (nonatomic, strong) IBOutlet NSBrowser	*fileManager;
 @property (nonatomic) bool							useRecordVideo;
 @property (nonatomic) bool							isDeviceConnected;
 

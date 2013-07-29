@@ -113,7 +113,7 @@
                                         <imageView id="575">
                                             <rect key="frame" x="97" y="437" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="sunfl0wer" id="578"/>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="icon" id="578"/>
                                         </imageView>
                                         <textField verticalHuggingPriority="750" id="576">
                                             <rect key="frame" x="14" y="513" width="88" height="24"/>
@@ -629,15 +629,13 @@
                                     <rect key="frame" x="10" y="33" width="610" height="545"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="FGf-cP-2iO">
-                                            <rect key="frame" x="14" y="420" width="602" height="122"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="In Progress" id="T8P-gE-h4k">
-                                                <font key="font" size="32" name="LucidaGrande"/>
-                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
+                                        <browser verticalHuggingPriority="750" allowsExpansionToolTips="YES" enabled="YES" hasHorizontalScroller="YES" allowsEmptySelection="YES" defaultColumnWidth="130" minColumnWidth="100" titled="YES" separatesColumns="YES" allowsTypeSelect="YES" columnResizingType="user" id="7hX-ob-xXt">
+                                            <rect key="frame" x="17" y="16.999999761851658" width="576" height="545"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="494" id="pKf-sh-g2r"/>
+                                            </connections>
+                                        </browser>
                                     </subviews>
                                 </view>
                             </tabViewItem>
@@ -720,6 +718,7 @@
                 <action selector="onTouchSaveVideo:" destination="00P-kz-Obc" id="JVL-q3-VRr"/>
                 <outlet property="btnSaveVideo" destination="00P-kz-Obc" id="cot-vJ-U0w"/>
                 <outlet property="deviceInfo" destination="648" id="674"/>
+                <outlet property="fileManager" destination="7hX-ob-xXt" id="DhH-Bg-QGd"/>
                 <outlet property="imageCapture" destination="701" id="703"/>
                 <outlet property="tabView" destination="536" id="679"/>
                 <outlet property="window" destination="371" id="532"/>
@@ -764,6 +763,6 @@
         <image name="NSApplicationIcon" width="128" height="128"/>
         <image name="NSStopProgressFreestandingTemplate" width="12" height="12"/>
         <image name="btn_donate_SM" width="74" height="26"/>
-        <image name="sunfl0wer" width="512" height="512"/>
+        <image name="icon" width="512" height="512"/>
     </resources>
 </document>

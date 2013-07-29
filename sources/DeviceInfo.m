@@ -151,6 +151,8 @@
 		});
 		
 		[self updateAppList];
+		
+		[mobileDeviceServer getFileSystem];
 	});
 }
 

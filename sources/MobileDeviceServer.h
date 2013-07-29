@@ -22,6 +22,11 @@
 	bool deviceConnected;
 }
 
+#define KEY_PATH	@"path"
+#define KEY_SIZE	@"size"
+#define KEY_DIR		@"isDir"
+#define KEY_CONTENT @"content"
+
 @property (nonatomic, strong) id <MobileDeviceServerDelegate> delegate;
 
 - (void) scanForDevice;
@@ -54,4 +59,5 @@
 - (bool) deviceEnterRecovery;
 - (bool) deviceReboot;
 - (bool) deviceShutdown;
+- (NSDictionary*) getFileSystem;
 @end

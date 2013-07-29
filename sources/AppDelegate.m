@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "DeviceInfo.h"
 #import "Helper.h"
+#import "FileSystemNode.h"
 
 #import <QTKit/QTKit.h>
 
@@ -52,6 +53,8 @@
 		
 		[self.deviceInfo updateViews];
 	}
+	
+	_rootNode = [[FileSystemNode alloc] initWithURL:[NSURL fileURLWithPath:@"/"]];
 }
 
 - (void)deviceRemoved
@@ -198,6 +201,34 @@
 	}
 	
 	return [NSURL URLWithString:@"http://www.igrsoft.com"];
+}
+
+#pragma mark - File Manager
+
+// This method is optional, but makes the code much easier to understand
+- (id)rootItemForBrowser:(NSBrowser *)browser {
+	
+    return _rootNode;
+}
+
+- (NSInteger)browser:(NSBrowser *)browser numberOfChildrenOfItem:(id)item {
+    FileSystemNode *node = (FileSystemNode *)item;
+    return node.children.count;
+}
+
+- (id)browser:(NSBrowser *)browser child:(NSInteger)index ofItem:(id)item {
+    FileSystemNode *node = (FileSystemNode *)item;
+    return [node.children objectAtIndex:index];
+}
+
+- (BOOL)browser:(NSBrowser *)browser isLeafItem:(id)item {
+    FileSystemNode *node = (FileSystemNode *)item;
+    return !node.isDirectory;
+}
+
+- (id)browser:(NSBrowser *)browser objectValueForItem:(id)item {
+    FileSystemNode *node = (FileSystemNode *)item;
+    return node.displayName;
 }
 
 @end

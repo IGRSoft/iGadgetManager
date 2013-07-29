@@ -17,6 +17,8 @@
 #include <libimobiledevice/diagnostics_relay.h>
 
 #include <plist/plist.h>
+#include <stdio.h>
+#include <string.h>
 
 typedef enum {
 	
@@ -172,6 +174,10 @@ void status_cb(const char *operation, plist_t status, void *unused);
 
 - (lockdownd_client_t) getInfoForDevice:(idevice_t)_device
 {
+	if (lockdownd) {
+		return lockdownd;
+	}
+	
 	lockdownd_client_t _lockdownd = nil;
 	
  	lockdownd_error_t lockdownd_error = 0;
@@ -187,23 +193,24 @@ void status_cb(const char *operation, plist_t status, void *unused);
 
 - (afc_client_t) getAFCInfoForDevice:(idevice_t)_device
 {
+	if (afc) {
+		return afc;
+	}
+	
 	lockdownd_client_t client = [self getInfoForDevice:device];
 	
 	afc_client_t _afc = nil;
 	lockdownd_service_descriptor_t descriptor = 0;
 	
 	if (!client) {
-		lockdownd_client_free(client);
 		return _afc;
 	}
 	
 	if ((lockdownd_start_service(client, "com.apple.afc", &descriptor) != LOCKDOWN_E_SUCCESS) || !descriptor)
 	{
-		lockdownd_client_free(client);
 		return _afc;
 	}
 	
-	lockdownd_client_free(client);
 	afc_client_new(_device, descriptor, &_afc);
 	
 	return _afc;
@@ -387,7 +394,6 @@ void status_cb(const char *operation, plist_t status, void *unused);
 	}
 	plist_t value_node = nil;
 
-	//lockdownd_client_t lockdownd = [self getInfoForDevice:device];
 	lockdownd_get_value(lockdownd, nil, key, &value_node);
 	
 	char *val = nil;
@@ -401,7 +407,6 @@ void status_cb(const char *operation, plist_t status, void *unused);
 			plist_to_xml(value_node, &val, &xml_length);
 		}
 	}
-	//lockdownd_client_free(lockdownd);
 	
 	if (val && strlen(val) > 0) {
 		return [NSString stringWithUTF8String:val];
@@ -504,7 +509,6 @@ void device_event_cb(const idevice_event_t* event, void* userdata)
 	if (err != INSTPROXY_E_SUCCESS) {
 		DBNSLog(@"ERROR: instproxy_browse returned %d", err);
 		if (err != INSTPROXY_E_CONN_FAILED) {
-			lockdownd_client_free(client);
 		}
 		instproxy_client_free(ipc);
 		
@@ -514,7 +518,6 @@ void device_event_cb(const idevice_event_t* event, void* userdata)
 	if (!apps || (plist_get_node_type(apps) != PLIST_ARRAY)) {
 		DBNSLog(@"ERROR: instproxy_browse returnd an invalid plist!");
 		instproxy_client_free(ipc);
-		lockdownd_client_free(client);
 		if (sbs) sbservices_client_free(sbs);
 		return nil;
 	}
@@ -529,7 +532,6 @@ void device_event_cb(const idevice_event_t* event, void* userdata)
 		}
 		plist_free(apps);
 		instproxy_client_free(ipc);
-		lockdownd_client_free(client);
 		if (sbs) sbservices_client_free(sbs);
 		return nil;
 	}
@@ -589,9 +591,7 @@ void device_event_cb(const idevice_event_t* event, void* userdata)
 		free(s_dispName);
 		free(s_appid);
 	}
-	//plist_free(apps);
 	instproxy_client_free(ipc);
-	lockdownd_client_free(client);
 	if (sbs) sbservices_client_free(sbs);
 	
 	return arr;
@@ -705,7 +705,6 @@ NSString* load_icon (sbservices_client_t sbs, const char *_id)
 	if (err != INSTPROXY_E_SUCCESS) {
 		DBNSLog(@"ERROR: instproxy_browse returned %d", err);
 		instproxy_client_free(ipc);
-		lockdownd_client_free(client);
 		if (sbs) sbservices_client_free(sbs);
 		return;
 	}
@@ -785,7 +784,6 @@ void status_cb(const char *operation, plist_t status, void *unused)
 	lockdownd_client_t lckd = [self getInfoForDevice:device];
 	lockdownd_service_descriptor_t shotrDescriptor = NULL;
 	lockdownd_start_service(lckd, "com.apple.mobile.screenshotr", &shotrDescriptor);
-	lockdownd_client_free(lckd);
 	if (shotrDescriptor) {
 		if (shotrDescriptor->port && shotrDescriptor->port > 0) {
 			if (screenshotr_client_new(device, shotrDescriptor, &shotr) != SCREENSHOTR_E_SUCCESS) {
@@ -819,7 +817,6 @@ void status_cb(const char *operation, plist_t status, void *unused)
 	}
 	
 	lockdownd_goodbye(_lockdownd);
-	lockdownd_client_free(_lockdownd);
 	
 	return isSuccessful == LOCKDOWN_E_SUCCESS;
 }
@@ -900,6 +897,107 @@ void status_cb(const char *operation, plist_t status, void *unused)
 	diagnostics_relay_client_free(diagnostics_client);
 	
 	return result == DIAGNOSTICS_RELAY_E_SUCCESS;
+}
+
+- (NSDictionary*) getFileSystem
+{
+	afc_client_t _afc = [self getAFCInfoForDevice:device];
+	
+	char **list = NULL;
+	
+	NSMutableDictionary* fs = nil;
+	
+	char* dir = "/";
+	
+	afc_error_t err = afc_read_directory (_afc, dir, &list);
+    if ( err == AFC_E_SUCCESS )
+    {
+		fs = [NSMutableDictionary dictionary];
+		for (int i = 0; list[i]; i++) {
+			
+			if (strcmp(list[i], ".") != 0 && strcmp(list[i], "..") != 0) {
+				fs[[NSString stringWithCString:list[i] encoding:NSUTF8StringEncoding]] = [self getInfoForFile:list[i] inDir:dir withAFC:_afc];
+			}
+			
+			free(list[i]);
+		}
+        
+    }
+    return fs;
+}
+
+- (NSDictionary*) getFilesForDir:(char*)dir withAFC:(afc_client_t) _afc
+{
+	char **list = NULL;
+	
+	NSMutableDictionary* fs = nil;
+	
+	afc_error_t err = afc_read_directory (_afc, dir, &list);
+    if ( err == AFC_E_SUCCESS )
+    {
+		fs = [NSMutableDictionary dictionary];
+		for (int i = 0; list[i]; i++) {
+			if (strcmp(list[i], ".") != 0 && strcmp(list[i], "..") != 0) {
+				fs[[NSString stringWithCString:list[i] encoding:NSUTF8StringEncoding]] = [self getInfoForFile:list[i] inDir:dir withAFC:_afc];
+			}
+			
+			free(list[i]);
+		}
+    }
+	
+	return fs;
+}
+
+- (NSMutableDictionary*)getInfoForFile:(const char*)file inDir:(char*)dir withAFC:(afc_client_t) _afc
+{
+	fprintf(stdout,"%s/%s\n", dir, file);
+	
+	NSMutableDictionary* fileDic = [NSMutableDictionary dictionary];
+	char **info = NULL;
+	
+	char fullPath[255];
+	strcpy( fullPath, dir );
+	if (strcmp(fullPath, "/")) {
+		strcat(fullPath, "/");
+	}
+	strcat(fullPath, file);
+
+	afc_error_t err = afc_get_file_info(_afc, fullPath, &info);
+	
+	if ( err == AFC_E_SUCCESS )
+	{
+		for (int j = 0; info[j]; j+=2) {
+			
+			fprintf(stdout,"\t %s = %s \n", info[j], info[j+1]);
+			
+			if (strcmp(info[j], "st_size") == 0) {
+				
+				NSString *size = [NSString stringWithUTF8String:info[j+1]];
+				fileDic[KEY_SIZE] = @([size intValue]);
+			}
+			else if (strcmp(info[j], "st_ifmt") == 0) {
+				if (strcmp(info[j+1], "S_IFDIR") == 0) {
+					fileDic[KEY_DIR] = @(YES);
+				}
+				else
+				{
+					fileDic[KEY_DIR] = @(NO);
+				}
+				if ([fileDic[KEY_DIR] boolValue]) {
+
+					fileDic[KEY_CONTENT] = [self getFilesForDir:fullPath withAFC:_afc];
+				}
+			}
+		}
+		
+		free(info);
+	}
+	else
+	{
+		
+	}
+	
+	return fileDic;
 }
 
 @end
