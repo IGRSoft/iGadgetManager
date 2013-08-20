@@ -2,3 +2,6 @@
 [submodule "External/libimobiledevice"]
 	path = External/libimobiledevice
 	url = https://github.com/aburgh/libimobiledevice.git
+[submodule "External/LBProgressBar"]
+	path = External/LBProgressBar
+	url = https://github.com/iKorich/LBProgressBar.git
