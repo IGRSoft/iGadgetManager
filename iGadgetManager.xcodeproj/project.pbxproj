@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A513292617844C25006D3CDE /* LBProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A513292517844C25006D3CDE /* LBProgressBar.m */; };
 		A513293117845966006D3CDE /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = A5132930178458F4006D3CDE /* Helper.m */; };
 		A519BA31178D5D1600CF01A6 /* btn_donate_SM.gif in Resources */ = {isa = PBXBuildFile; fileRef = A519BA30178D5D1600CF01A6 /* btn_donate_SM.gif */; };
 		A53A3C0C1690794D00C19F81 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A53A3C0B1690794D00C19F81 /* Cocoa.framework */; };
@@ -30,6 +29,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A507868317C3BBAA00EB0393 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5A1F71F1786D7D100DE66C6 /* libimobiledevice.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96A8D95117A12DF6006E38E0;
+			remoteInfo = ideviceexec;
+		};
+		A507868517C3BBAA00EB0393 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5A1F71F1786D7D100DE66C6 /* libimobiledevice.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96A8D97317A4A9B5006E38E0;
+			remoteInfo = afccl;
+		};
 		A5A1F8401786D7D200DE66C6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A5A1F71F1786D7D100DE66C6 /* libimobiledevice.xcodeproj */;
@@ -229,8 +242,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A513292417844C25006D3CDE /* LBProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBProgressBar.h; sourceTree = "<group>"; };
-		A513292517844C25006D3CDE /* LBProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBProgressBar.m; sourceTree = "<group>"; };
 		A513292F178458F4006D3CDE /* Helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
 		A5132930178458F4006D3CDE /* Helper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
 		A519BA30178D5D1600CF01A6 /* btn_donate_SM.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = btn_donate_SM.gif; sourceTree = "<group>"; };
@@ -280,15 +291,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A513292317844C25006D3CDE /* LBProgressBar */ = {
-			isa = PBXGroup;
-			children = (
-				A513292417844C25006D3CDE /* LBProgressBar.h */,
-				A513292517844C25006D3CDE /* LBProgressBar.m */,
-			);
-			path = LBProgressBar;
-			sourceTree = "<group>";
-		};
 		A513292E178458F4006D3CDE /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -403,6 +405,8 @@
 				A5A1F8651786D7D200DE66C6 /* ideviceimagemounter */,
 				A5A1F8671786D7D200DE66C6 /* ideviceprovision */,
 				A5A1F8691786D7D200DE66C6 /* idevicescreenshot */,
+				A507868417C3BBAA00EB0393 /* ideviceexec */,
+				A507868617C3BBAA00EB0393 /* afccl */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -468,7 +472,6 @@
 			children = (
 				A5E86E61179FB3CE0029B4A7 /* FileSystemNode */,
 				A5A1F6531786D7D100DE66C6 /* libimobiledevice */,
-				A513292317844C25006D3CDE /* LBProgressBar */,
 			);
 			path = External;
 			sourceTree = SOURCE_ROOT;
@@ -532,6 +535,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		A507868417C3BBAA00EB0393 /* ideviceexec */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = ideviceexec;
+			remoteRef = A507868317C3BBAA00EB0393 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A507868617C3BBAA00EB0393 /* afccl */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = afccl;
+			remoteRef = A507868517C3BBAA00EB0393 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		A5A1F8411786D7D200DE66C6 /* libimobiledevice.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -744,7 +761,6 @@
 				A5EBFA4716907AA800E003A2 /* DeviceInfo.m in Sources */,
 				A513293117845966006D3CDE /* Helper.m in Sources */,
 				A5EBFA4B16907B1400E003A2 /* MobileDeviceServer.m in Sources */,
-				A513292617844C25006D3CDE /* LBProgressBar.m in Sources */,
 				A5EBFA4F16907B5500E003A2 /* ItemCellView.m in Sources */,
 				A5EBFABE1690A40D00E003A2 /* NSColoredView.m in Sources */,
 			);

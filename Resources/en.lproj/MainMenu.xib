@@ -1,35 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4471.1" systemVersion="13A524d" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4488.2" systemVersion="13A538g" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment defaultVersion="1070" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4471.1"/>
-        <plugIn identifier="com.apple.QTKitIBPlugin" version="3332"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4488.2"/>
+        <plugIn identifier="com.apple.QTKitIBPlugin" version="3334"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
             <connections>
-                <action selector="orderFrontStandardAboutPanel:" destination="58" id="142"/>
                 <outlet property="delegate" destination="494" id="495"/>
             </connections>
         </customObject>
-        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder">
-            <connections>
-                <action selector="arrangeInFront:" destination="5" id="39"/>
-                <action selector="copy:" destination="197" id="224"/>
-                <action selector="hide:" destination="134" id="367"/>
-                <action selector="hideOtherApplications:" destination="145" id="368"/>
-                <action selector="performClose:" destination="73" id="193"/>
-                <action selector="performMiniaturize:" destination="23" id="37"/>
-                <action selector="performZoom:" destination="239" id="240"/>
-                <action selector="selectAll:" destination="198" id="232"/>
-                <action selector="unhideAllApplications:" destination="150" id="370"/>
-            </connections>
-        </customObject>
-        <customObject id="-3" userLabel="Application">
-            <connections>
-                <action selector="terminate:" destination="136" id="449"/>
-            </connections>
-        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
         <menu title="AMainMenu" systemMenu="main" id="29">
             <items>
                 <menuItem title="iGadget Manager" id="56">
@@ -37,6 +20,9 @@
                         <items>
                             <menuItem title="About iGadget Manager" id="58">
                                 <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="orderFrontStandardAboutPanel:" target="-2" id="142"/>
+                                </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="236">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
@@ -51,42 +37,81 @@
                             <menuItem isSeparatorItem="YES" id="144">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Hide iGadget Manager" keyEquivalent="h" id="134"/>
+                            <menuItem title="Hide iGadget Manager" keyEquivalent="h" id="134">
+                                <connections>
+                                    <action selector="hide:" target="-1" id="367"/>
+                                </connections>
+                            </menuItem>
                             <menuItem title="Hide Others" keyEquivalent="h" id="145">
                                 <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="hideOtherApplications:" target="-1" id="368"/>
+                                </connections>
                             </menuItem>
-                            <menuItem title="Show All" id="150"/>
+                            <menuItem title="Show All" id="150">
+                                <connections>
+                                    <action selector="unhideAllApplications:" target="-1" id="370"/>
+                                </connections>
+                            </menuItem>
                             <menuItem isSeparatorItem="YES" id="149">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Quit iGadget Manager" keyEquivalent="q" id="136"/>
+                            <menuItem title="Quit iGadget Manager" keyEquivalent="q" id="136">
+                                <connections>
+                                    <action selector="terminate:" target="-3" id="449"/>
+                                </connections>
+                            </menuItem>
                         </items>
                     </menu>
                 </menuItem>
                 <menuItem title="File" id="83">
                     <menu key="submenu" title="File" id="81">
                         <items>
-                            <menuItem title="Close" keyEquivalent="w" id="73"/>
+                            <menuItem title="Close" keyEquivalent="w" id="73">
+                                <connections>
+                                    <action selector="performClose:" target="-1" id="193"/>
+                                </connections>
+                            </menuItem>
                         </items>
                     </menu>
                 </menuItem>
                 <menuItem title="Edit" id="217">
                     <menu key="submenu" title="Edit" id="205">
                         <items>
-                            <menuItem title="Copy" keyEquivalent="c" id="197"/>
-                            <menuItem title="Select All" keyEquivalent="a" id="198"/>
+                            <menuItem title="Copy" keyEquivalent="c" id="197">
+                                <connections>
+                                    <action selector="copy:" target="-1" id="224"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Select All" keyEquivalent="a" id="198">
+                                <connections>
+                                    <action selector="selectAll:" target="-1" id="232"/>
+                                </connections>
+                            </menuItem>
                         </items>
                     </menu>
                 </menuItem>
                 <menuItem title="Window" id="19">
                     <menu key="submenu" title="Window" systemMenu="window" id="24">
                         <items>
-                            <menuItem title="Minimize" keyEquivalent="m" id="23"/>
-                            <menuItem title="Zoom" id="239"/>
+                            <menuItem title="Minimize" keyEquivalent="m" id="23">
+                                <connections>
+                                    <action selector="performMiniaturize:" target="-1" id="37"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Zoom" id="239">
+                                <connections>
+                                    <action selector="performZoom:" target="-1" id="240"/>
+                                </connections>
+                            </menuItem>
                             <menuItem isSeparatorItem="YES" id="92">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Bring All to Front" id="5"/>
+                            <menuItem title="Bring All to Front" id="5">
+                                <connections>
+                                    <action selector="arrangeInFront:" target="-1" id="39"/>
+                                </connections>
+                            </menuItem>
                         </items>
                     </menu>
                 </menuItem>
@@ -435,6 +460,32 @@
                                                 <progressIndicator maxValue="100" style="bar" id="614" customClass="LBProgressBar">
                                                     <rect key="frame" x="20" y="32" width="576" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="barColor">
+                                                            <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="lighterProgressColor">
+                                                            <color key="value" white="0.93000000000000005" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="darkerProgressColor">
+                                                            <color key="value" white="0.93000000000000005" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="lighterStripeColor">
+                                                            <color key="value" white="0.93000000000000005" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="darkerStripeColor">
+                                                            <color key="value" white="0.93000000000000005" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                            <color key="value" white="0.93000000000000005" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="stripeWidth">
+                                                            <integer key="value" value="0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </progressIndicator>
                                                 <textField verticalHuggingPriority="750" id="612">
                                                     <rect key="frame" x="189" y="63" width="120" height="17"/>
@@ -500,14 +551,14 @@
                                     <rect key="frame" x="10" y="33" width="610" height="545"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <scrollView autohidesScrollers="YES" horizontalLineScroll="47" horizontalPageScroll="10" verticalLineScroll="47" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="629">
+                                        <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="629">
                                             <rect key="frame" x="17" y="17" width="576" height="525"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <clipView key="contentView" id="Cwq-A7-3DD">
                                                 <rect key="frame" x="1" y="1" width="574" height="523"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="45" rowSizeStyle="automatic" viewBased="YES" id="632">
+                                                    <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowSizeStyle="automatic" viewBased="YES" id="632">
                                                         <rect key="frame" x="0.0" y="0.0" width="574" height="523"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <size key="intercellSpacing" width="3" height="2"/>
@@ -562,6 +613,9 @@
                                                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                                     <font key="font" metaFont="system"/>
                                                                                 </buttonCell>
+                                                                                <connections>
+                                                                                    <action selector="unistallApp:" target="648" id="691"/>
+                                                                                </connections>
                                                                             </button>
                                                                         </subviews>
                                                                         <connections>
@@ -620,6 +674,9 @@
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
+                                            <connections>
+                                                <action selector="onTouchSaveVideo:" target="494" id="JVL-q3-VRr"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </view>
@@ -630,7 +687,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <browser verticalHuggingPriority="750" allowsExpansionToolTips="YES" enabled="YES" hasHorizontalScroller="YES" allowsEmptySelection="YES" defaultColumnWidth="130" minColumnWidth="100" titled="YES" separatesColumns="YES" allowsTypeSelect="YES" columnResizingType="user" id="7hX-ob-xXt">
-                                            <rect key="frame" x="17" y="16.999999761851658" width="576" height="545"/>
+                                            <rect key="frame" x="17" y="16.999999761851655" width="576" height="545"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                             <connections>
                                                 <outlet property="delegate" destination="494" id="pKf-sh-g2r"/>
@@ -652,6 +709,7 @@
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                             <connections>
+                                                <action selector="rebootDevice:" target="648" id="9Wb-qz-6do"/>
                                                 <binding destination="494" name="enabled" keyPath="self.isDeviceConnected" id="uux-1s-kS5"/>
                                             </connections>
                                         </button>
@@ -663,6 +721,7 @@
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                             <connections>
+                                                <action selector="shutdownDevice:" target="648" id="Bdz-CI-sc0"/>
                                                 <binding destination="494" name="enabled" keyPath="self.isDeviceConnected" id="Rpj-kS-xj6"/>
                                             </connections>
                                         </button>
@@ -674,6 +733,7 @@
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                             <connections>
+                                                <action selector="recoveryModeDevice:" target="648" id="jIA-pc-kpL"/>
                                                 <binding destination="494" name="enabled" keyPath="self.isDeviceConnected" id="nru-nu-eGG"/>
                                             </connections>
                                         </button>
@@ -699,6 +759,9 @@
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="goToURL:" target="494" id="giI-4q-DeE"/>
+                        </connections>
                     </button>
                     <button id="SBp-9Q-z8a">
                         <rect key="frame" x="562" y="12" width="74" height="32"/>
@@ -707,15 +770,15 @@
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" size="12" name="Helvetica-BoldOblique"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="goToURL:" target="494" id="s7h-wE-pkv"/>
+                        </connections>
                     </button>
                 </subviews>
             </view>
         </window>
         <customObject id="494" customClass="AppDelegate">
             <connections>
-                <action selector="goToURL:" destination="mtY-1K-UVe" id="giI-4q-DeE"/>
-                <action selector="goToURL:" destination="SBp-9Q-z8a" id="s7h-wE-pkv"/>
-                <action selector="onTouchSaveVideo:" destination="00P-kz-Obc" id="JVL-q3-VRr"/>
                 <outlet property="btnSaveVideo" destination="00P-kz-Obc" id="cot-vJ-U0w"/>
                 <outlet property="deviceInfo" destination="648" id="674"/>
                 <outlet property="fileManager" destination="7hX-ob-xXt" id="DhH-Bg-QGd"/>
@@ -727,10 +790,6 @@
         <customObject id="420" customClass="NSFontManager"/>
         <customObject id="648" customClass="DeviceInfo">
             <connections>
-                <action selector="rebootDevice:" destination="A9U-n2-Eie" id="9Wb-qz-6do"/>
-                <action selector="recoveryModeDevice:" destination="kb5-6v-urt" id="jIA-pc-kpL"/>
-                <action selector="shutdownDevice:" destination="bEz-Rt-qzd" id="Bdz-CI-sc0"/>
-                <action selector="unistallApp:" destination="688" id="691"/>
                 <outlet property="appsList" destination="632" id="671"/>
                 <outlet property="coloredView" destination="544" id="670"/>
                 <outlet property="deviceActivated" destination="684" id="687"/>
@@ -761,7 +820,7 @@
     </objects>
     <resources>
         <image name="NSApplicationIcon" width="128" height="128"/>
-        <image name="NSStopProgressFreestandingTemplate" width="12" height="12"/>
+        <image name="NSStopProgressFreestandingTemplate" width="83" height="83"/>
         <image name="btn_donate_SM" width="74" height="26"/>
         <image name="icon" width="512" height="512"/>
     </resources>
