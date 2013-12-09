@@ -26,8 +26,6 @@
 {
 	m_OperationQueue = [[NSOperationQueue alloc] init];
 	
-	m_DevicesDict = [[NSMutableDictionary alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Devices" ofType:@"plist"]];
-	
 	self.mobileDeviceServer = [[MobileDeviceServer alloc] init];
 	[self.mobileDeviceServer setDelegate:self];
 	
@@ -46,13 +44,8 @@
 	
 	self.isDeviceConnected = (connectedDevice != nil);
 	
-	if (m_DevicesDict && [m_DevicesDict count] > 0)
-	{		
-		[self.deviceInfo setupWithMobileDeviceServer:self.mobileDeviceServer
-										   withPlist:m_DevicesDict];
-		
-		[self.deviceInfo updateViews];
-	}
+	[self.deviceInfo setupWithMobileDeviceServer:self.mobileDeviceServer];
+	[self.deviceInfo updateViews];
 	
 	_rootNode = [[FileSystemNode alloc] initWithURL:[NSURL fileURLWithPath:@"/"]];
 }

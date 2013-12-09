@@ -12,3 +12,5 @@
 #else
 #define DBNSLog( s, ... )
 #endif
+
+#define BUNDLE_PATH @"/System/Library/CoreServices/CoreTypes.bundle/Contents/Library/MobileDevices.bundle/Contents"

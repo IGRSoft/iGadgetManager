@@ -14,12 +14,12 @@
 
 @interface DeviceInfo : NSObject <NSTableViewDelegate> {
 	
-	NSMutableDictionary*	m_DevicesDict;
+	NSArray*				m_DevicesDict;
 	MobileDeviceServer*		mobileDeviceServer;
 	NSArray*				m_AppsList;
 }
 
-- (void)setupWithMobileDeviceServer:(MobileDeviceServer*) mobileDeviceServer withPlist:(NSMutableDictionary*)plist;
+- (void)setupWithMobileDeviceServer:(MobileDeviceServer*) mobileDeviceServer;
 - (void)updateViews;
 
 ///////////////////////////////Summary///////////////////////////////

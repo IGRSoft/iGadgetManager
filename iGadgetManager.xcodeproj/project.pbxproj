@@ -15,11 +15,9 @@
 		A53A3C181690794D00C19F81 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A53A3C171690794D00C19F81 /* main.m */; };
 		A53A3C1C1690794D00C19F81 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = A53A3C1A1690794D00C19F81 /* Credits.rtf */; };
 		A53A3C1F1690794D00C19F81 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A53A3C1E1690794D00C19F81 /* AppDelegate.m */; };
-		A56CD76816B2C835005BFDDA /* Devices.plist in Resources */ = {isa = PBXBuildFile; fileRef = A56CD76716B2C835005BFDDA /* Devices.plist */; };
-		A56CD76B16B2CC35005BFDDA /* devices in Resources */ = {isa = PBXBuildFile; fileRef = A56CD76A16B2CC35005BFDDA /* devices */; };
+		A56D5F791856596500CF815D /* libusbmuxd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A56D5F701856593800CF815D /* libusbmuxd.a */; };
 		A586F6271696F82D008E9C21 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A586F6261696F82D008E9C21 /* QTKit.framework */; };
 		A5A1F87C1786D81300DE66C6 /* libimobiledevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A1F8411786D7D200DE66C6 /* libimobiledevice.a */; };
-		A5A1F95C1786D9A500DE66C6 /* libusbmuxd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A1F9511786D98A00DE66C6 /* libusbmuxd.a */; };
 		A5C3296C16B954E9003EFD88 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5C3296A16B954E9003EFD88 /* MainMenu.xib */; };
 		A5E0B28816B278F800E8627E /* icon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = A5E0B28716B278F800E8627E /* icon.iconset */; };
 		A5E86E64179FB3CE0029B4A7 /* FileSystemNode.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E86E63179FB3CE0029B4A7 /* FileSystemNode.m */; };
@@ -43,6 +41,41 @@
 			proxyType = 2;
 			remoteGlobalIDString = 96A8D97317A4A9B5006E38E0;
 			remoteInfo = afccl;
+		};
+		A56D5F6F1856593800CF815D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A56D5F341856593700CF815D /* libusbmuxd.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96F87242181DD60900EE8AF6;
+			remoteInfo = libusbmuxd.a;
+		};
+		A56D5F711856593800CF815D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A56D5F341856593700CF815D /* libusbmuxd.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96F8724B181DD62E00EE8AF6;
+			remoteInfo = libusbmuxd.dylib;
+		};
+		A56D5F731856593800CF815D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A56D5F341856593700CF815D /* libusbmuxd.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96F8727C181E684800EE8AF6;
+			remoteInfo = iproxy;
+		};
+		A56D5F751856593800CF815D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A56D5F341856593700CF815D /* libusbmuxd.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96F87290181F4C5000EE8AF6;
+			remoteInfo = "iproxy-osx";
+		};
+		A56D5F771856595A00CF815D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A56D5F341856593700CF815D /* libusbmuxd.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 96F87241181DD60900EE8AF6;
+			remoteInfo = libusbmuxd.a;
 		};
 		A5A1F8401786D7D200DE66C6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -198,48 +231,6 @@
 			remoteGlobalIDString = 96B88B2F174E0B9900B868D9;
 			remoteInfo = imobiledevice.a;
 		};
-		A5A1F9501786D98A00DE66C6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A5A1F8F11786D98A00DE66C6 /* usbmuxd.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 96ED2EF011B83BF3003ED904;
-			remoteInfo = libusbmuxd.a;
-		};
-		A5A1F9521786D98A00DE66C6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A5A1F8F11786D98A00DE66C6 /* usbmuxd.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1007CB0801007CB0801007CB;
-			remoteInfo = libusbmuxd.dylib;
-		};
-		A5A1F9541786D98A00DE66C6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A5A1F8F11786D98A00DE66C6 /* usbmuxd.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1007DEBE01007DEBE01007DE;
-			remoteInfo = usbmuxd;
-		};
-		A5A1F9561786D98A00DE66C6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A5A1F8F11786D98A00DE66C6 /* usbmuxd.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1007ED7E01007ED7E01007ED;
-			remoteInfo = iproxy;
-		};
-		A5A1F9581786D98A00DE66C6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A5A1F8F11786D98A00DE66C6 /* usbmuxd.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 96C86655175C42200061472B;
-			remoteInfo = "iproxy-osx";
-		};
-		A5A1F95A1786D99B00DE66C6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A5A1F8F11786D98A00DE66C6 /* usbmuxd.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 96ED2EE411B83BF3003ED904;
-			remoteInfo = libusbmuxd.a;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -260,11 +251,9 @@
 		A53A3C1B1690794D00C19F81 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		A53A3C1D1690794D00C19F81 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A53A3C1E1690794D00C19F81 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A56CD76716B2C835005BFDDA /* Devices.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Devices.plist; sourceTree = "<group>"; };
-		A56CD76A16B2CC35005BFDDA /* devices */ = {isa = PBXFileReference; lastKnownFileType = folder; path = devices; sourceTree = "<group>"; };
+		A56D5F341856593700CF815D /* libusbmuxd.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = libusbmuxd.xcodeproj; sourceTree = "<group>"; };
 		A586F6261696F82D008E9C21 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = System/Library/Frameworks/QTKit.framework; sourceTree = SDKROOT; };
 		A5A1F71F1786D7D100DE66C6 /* libimobiledevice.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = libimobiledevice.xcodeproj; sourceTree = "<group>"; };
-		A5A1F8F11786D98A00DE66C6 /* usbmuxd.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = usbmuxd.xcodeproj; sourceTree = "<group>"; };
 		A5C3296B16B954E9003EFD88 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		A5E0B28716B278F800E8627E /* icon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = icon.iconset; sourceTree = "<group>"; };
 		A5E86E62179FB3CE0029B4A7 /* FileSystemNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileSystemNode.h; sourceTree = "<group>"; };
@@ -284,7 +273,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5A1F95C1786D9A500DE66C6 /* libusbmuxd.a in Frameworks */,
+				A56D5F791856596500CF815D /* libusbmuxd.a in Frameworks */,
 				A5A1F87C1786D81300DE66C6 /* libimobiledevice.a in Frameworks */,
 				A53A3C0C1690794D00C19F81 /* Cocoa.framework in Frameworks */,
 				A586F6271696F82D008E9C21 /* QTKit.framework in Frameworks */,
@@ -385,10 +374,30 @@
 			name = other;
 			sourceTree = "<group>";
 		};
+		A56D5F291856593700CF815D /* libusbmuxd */ = {
+			isa = PBXGroup;
+			children = (
+				A56D5F341856593700CF815D /* libusbmuxd.xcodeproj */,
+			);
+			name = libusbmuxd;
+			path = deps/libusbmuxd;
+			sourceTree = "<group>";
+		};
+		A56D5F351856593700CF815D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A56D5F701856593800CF815D /* libusbmuxd.a */,
+				A56D5F721856593800CF815D /* libusbmuxd.dylib */,
+				A56D5F741856593800CF815D /* iproxy */,
+				A56D5F761856593800CF815D /* iproxy-osx */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		A5A1F6531786D7D100DE66C6 /* libimobiledevice */ = {
 			isa = PBXGroup;
 			children = (
-				A5A1F8811786D98900DE66C6 /* usbmuxd */,
+				A56D5F291856593700CF815D /* libusbmuxd */,
 				A5A1F71F1786D7D100DE66C6 /* libimobiledevice.xcodeproj */,
 			);
 			path = libimobiledevice;
@@ -424,27 +433,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A5A1F8811786D98900DE66C6 /* usbmuxd */ = {
-			isa = PBXGroup;
-			children = (
-				A5A1F8F11786D98A00DE66C6 /* usbmuxd.xcodeproj */,
-			);
-			name = usbmuxd;
-			path = deps/usbmuxd;
-			sourceTree = "<group>";
-		};
-		A5A1F8F21786D98A00DE66C6 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A5A1F9511786D98A00DE66C6 /* libusbmuxd.a */,
-				A5A1F9531786D98A00DE66C6 /* libusbmuxd.dylib */,
-				A5A1F9551786D98A00DE66C6 /* usbmuxd-iphat */,
-				A5A1F9571786D98A00DE66C6 /* iproxy */,
-				A5A1F9591786D98A00DE66C6 /* iproxy-osx */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		A5E86E61179FB3CE0029B4A7 /* FileSystemNode */ = {
 			isa = PBXGroup;
 			children = (
@@ -473,8 +461,6 @@
 				A53A3C141690794D00C19F81 /* InfoPlist.strings */,
 				A53A3C1A1690794D00C19F81 /* Credits.rtf */,
 				A5C3296A16B954E9003EFD88 /* MainMenu.xib */,
-				A56CD76A16B2CC35005BFDDA /* devices */,
-				A56CD76716B2C835005BFDDA /* Devices.plist */,
 				A5E0B28716B278F800E8627E /* icon.iconset */,
 			);
 			path = Resources;
@@ -504,8 +490,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				A56D5F781856595A00CF815D /* PBXTargetDependency */,
 				A5A1F87B1786D80200DE66C6 /* PBXTargetDependency */,
-				A5A1F95B1786D99B00DE66C6 /* PBXTargetDependency */,
 			);
 			name = iGadgetManager;
 			productName = sunfl0wer;
@@ -537,8 +523,8 @@
 					ProjectRef = A5A1F71F1786D7D100DE66C6 /* libimobiledevice.xcodeproj */;
 				},
 				{
-					ProductGroup = A5A1F8F21786D98A00DE66C6 /* Products */;
-					ProjectRef = A5A1F8F11786D98A00DE66C6 /* usbmuxd.xcodeproj */;
+					ProductGroup = A56D5F351856593700CF815D /* Products */;
+					ProjectRef = A56D5F341856593700CF815D /* libusbmuxd.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -561,6 +547,34 @@
 			fileType = "compiled.mach-o.executable";
 			path = afccl;
 			remoteRef = A507868517C3BBAA00EB0393 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A56D5F701856593800CF815D /* libusbmuxd.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libusbmuxd.a;
+			remoteRef = A56D5F6F1856593800CF815D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A56D5F721856593800CF815D /* libusbmuxd.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libusbmuxd.dylib;
+			remoteRef = A56D5F711856593800CF815D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A56D5F741856593800CF815D /* iproxy */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = iproxy;
+			remoteRef = A56D5F731856593800CF815D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A56D5F761856593800CF815D /* iproxy-osx */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "iproxy-osx";
+			remoteRef = A56D5F751856593800CF815D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		A5A1F8411786D7D200DE66C6 /* libimobiledevice.a */ = {
@@ -710,41 +724,6 @@
 			remoteRef = A5A1F8681786D7D200DE66C6 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		A5A1F9511786D98A00DE66C6 /* libusbmuxd.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.dylib";
-			path = libusbmuxd.a;
-			remoteRef = A5A1F9501786D98A00DE66C6 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A5A1F9531786D98A00DE66C6 /* libusbmuxd.dylib */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.dylib";
-			path = libusbmuxd.dylib;
-			remoteRef = A5A1F9521786D98A00DE66C6 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A5A1F9551786D98A00DE66C6 /* usbmuxd-iphat */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = "usbmuxd-iphat";
-			remoteRef = A5A1F9541786D98A00DE66C6 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A5A1F9571786D98A00DE66C6 /* iproxy */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = iproxy;
-			remoteRef = A5A1F9561786D98A00DE66C6 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A5A1F9591786D98A00DE66C6 /* iproxy-osx */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = "iproxy-osx";
-			remoteRef = A5A1F9581786D98A00DE66C6 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -756,8 +735,6 @@
 				A53A3C1C1690794D00C19F81 /* Credits.rtf in Resources */,
 				A519BA31178D5D1600CF01A6 /* btn_donate_SM.gif in Resources */,
 				A5E0B28816B278F800E8627E /* icon.iconset in Resources */,
-				A56CD76816B2C835005BFDDA /* Devices.plist in Resources */,
-				A56CD76B16B2CC35005BFDDA /* devices in Resources */,
 				A5C3296C16B954E9003EFD88 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -784,15 +761,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A56D5F781856595A00CF815D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = libusbmuxd.a;
+			targetProxy = A56D5F771856595A00CF815D /* PBXContainerItemProxy */;
+		};
 		A5A1F87B1786D80200DE66C6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = imobiledevice.a;
 			targetProxy = A5A1F87A1786D80200DE66C6 /* PBXContainerItemProxy */;
-		};
-		A5A1F95B1786D99B00DE66C6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = libusbmuxd.a;
-			targetProxy = A5A1F95A1786D99B00DE66C6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

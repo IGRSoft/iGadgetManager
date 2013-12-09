@@ -15,7 +15,6 @@
 
 @interface AppDelegate : NSObject <NSApplicationDelegate, MobileDeviceServerDelegate, NSTabViewDelegate, NSBrowserDelegate> {
 	
-	NSMutableDictionary*			m_DevicesDict;
 	NSTimer*						m_ImageCaptureTimer;
 	NSOperationQueue*				m_OperationQueue;
 
