@@ -40,6 +40,17 @@
 		NSString *productType = [mobileDeviceServer deviceProductType];
 		NSString *color = [mobileDeviceServer deviceColor];
 		
+		if ([color hasPrefix:@"#"])
+		{
+			color = [color substringFromIndex:1];
+		}
+		
+		//Temporary
+		if ([color isEqualToString:@"3b3b3c"])
+		{
+			color = @"99989b";
+		}
+		
 		NSArray *filteredModels = @[];
 		filteredModels = [m_DevicesDict filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(NSDictionary *evaluatedObject, NSDictionary *bindings)
 		{
