@@ -10,10 +10,15 @@
 #import "MobileDeviceServer.h"
 #import "ItemCellView.h"
 #import "LBProgressBar.h"
+#import "JAAIOSDeviceInfoManager.h"
 
 #define BYTE_IN_GB 1073741824
 
 @interface DeviceInfo ()
+{
+	NSArray                 *m_AppsList;
+    JAAIOSDeviceInfoManager *m_InfoManager;
+}
 
 @end
 
@@ -22,8 +27,7 @@
 - (void)setupWithMobileDeviceServer:(MobileDeviceServer*)_mobileDeviceServer
 {
 	mobileDeviceServer = _mobileDeviceServer;
-	NSString *plistFile = [NSString stringWithFormat:@"%@/Info.plist", BUNDLE_PATH];
-	m_DevicesDict = [NSDictionary dictionaryWithContentsOfFile:plistFile][@"UTExportedTypeDeclarations"];
+    m_InfoManager = [JAAIOSDeviceInfoManager new];
 }
 
 - (void)updateViews
@@ -36,52 +40,15 @@
 			[_originalDeviceName setStringValue:originalDeviceName];
 		});
 		
-		NSString *deviceHardwareModel = [mobileDeviceServer deviceHardwareModel];
-		NSString *productType = [mobileDeviceServer deviceProductType];
+        NSString *productType = [mobileDeviceServer deviceProductType];
 		NSString *color = [mobileDeviceServer deviceColor];
 		
-		if ([color hasPrefix:@"#"])
-		{
-			color = [color substringFromIndex:1];
-		}
-		
-		//Temporary
-		if ([color isEqualToString:@"3b3b3c"])
-		{
-			color = @"99989b";
-		}
-		
-		NSArray *filteredModels = @[];
-		filteredModels = [m_DevicesDict filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(NSDictionary *evaluatedObject, NSDictionary *bindings)
-		{
-			NSArray *model = evaluatedObject[@"UTTypeTagSpecification"][@"com.apple.device-model-code"];
-			if (model)
-			{
-				return [model indexOfObject:deviceHardwareModel] != NSNotFound && [model indexOfObject:productType] != NSNotFound;
-			}
-			
-			return NO;
-		}]];
-
-		filteredModels = [filteredModels filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"SELF['UTTypeIdentifier'] ENDSWITH %@", color]];
-		
-		if (filteredModels && [filteredModels count])
-		{
-			NSDictionary *info = [filteredModels firstObject];
-			
-			NSImage *img = nil;
-			if (info)
-			{
-				NSString *imgKey = [NSString stringWithFormat:@"%@/Resources/%@", BUNDLE_PATH, info[@"UTTypeIconFile"]];
-				img = [[NSImage alloc] initWithContentsOfFile:imgKey];
-			}
-			
-			if (img) {
-				dispatch_async(dispatch_get_main_queue(), ^{
-					[_devicePic setImage:img];
-				});
-			}
-		}
+        NSImage *img = [m_InfoManager iconForDevice:productType color:color];
+		if (img) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [_devicePic setImage:img];
+            });
+        }
 		
 		NSString *deviceName = [mobileDeviceServer deviceName];
 		dispatch_async(dispatch_get_main_queue(), ^{
@@ -113,6 +80,7 @@
 			[_deviceBootloader setStringValue:deviceBootloader];
 		});
 		
+        NSString *deviceHardwareModel = [mobileDeviceServer deviceHardwareModel];
 		dispatch_async(dispatch_get_main_queue(), ^{
 			[_deviceHardwareModel setStringValue:deviceHardwareModel];
 		});

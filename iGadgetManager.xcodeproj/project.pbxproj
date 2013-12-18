@@ -15,6 +15,7 @@
 		A53A3C181690794D00C19F81 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A53A3C171690794D00C19F81 /* main.m */; };
 		A53A3C1C1690794D00C19F81 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = A53A3C1A1690794D00C19F81 /* Credits.rtf */; };
 		A53A3C1F1690794D00C19F81 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A53A3C1E1690794D00C19F81 /* AppDelegate.m */; };
+		A548CC7D1861A60500FC1DB7 /* JAAIOSDeviceInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A548CC7C1861A60500FC1DB7 /* JAAIOSDeviceInfoManager.m */; };
 		A56D5F791856596500CF815D /* libusbmuxd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A56D5F701856593800CF815D /* libusbmuxd.a */; };
 		A586F6271696F82D008E9C21 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A586F6261696F82D008E9C21 /* QTKit.framework */; };
 		A5A1F87C1786D81300DE66C6 /* libimobiledevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A1F8411786D7D200DE66C6 /* libimobiledevice.a */; };
@@ -251,6 +252,8 @@
 		A53A3C1B1690794D00C19F81 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		A53A3C1D1690794D00C19F81 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A53A3C1E1690794D00C19F81 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A548CC7B1861A60500FC1DB7 /* JAAIOSDeviceInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JAAIOSDeviceInfoManager.h; sourceTree = "<group>"; };
+		A548CC7C1861A60500FC1DB7 /* JAAIOSDeviceInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JAAIOSDeviceInfoManager.m; sourceTree = "<group>"; };
 		A56D5F341856593700CF815D /* libusbmuxd.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = libusbmuxd.xcodeproj; sourceTree = "<group>"; };
 		A586F6261696F82D008E9C21 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = System/Library/Frameworks/QTKit.framework; sourceTree = SDKROOT; };
 		A5A1F71F1786D7D100DE66C6 /* libimobiledevice.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = libimobiledevice.xcodeproj; sourceTree = "<group>"; };
@@ -374,6 +377,16 @@
 			name = other;
 			sourceTree = "<group>";
 		};
+		A548CC7A1861A60500FC1DB7 /* JAAIOSDeviceInfo */ = {
+			isa = PBXGroup;
+			children = (
+				A548CC7B1861A60500FC1DB7 /* JAAIOSDeviceInfoManager.h */,
+				A548CC7C1861A60500FC1DB7 /* JAAIOSDeviceInfoManager.m */,
+			);
+			name = JAAIOSDeviceInfo;
+			path = JAAIOSDeviceInfo/JAAIOSDeviceInfo;
+			sourceTree = "<group>";
+		};
 		A56D5F291856593700CF815D /* libusbmuxd */ = {
 			isa = PBXGroup;
 			children = (
@@ -469,6 +482,7 @@
 		A5EBFA981690A01400E003A2 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				A548CC7A1861A60500FC1DB7 /* JAAIOSDeviceInfo */,
 				A507868C17C3BD5D00EB0393 /* LBProgressBar */,
 				A5E86E61179FB3CE0029B4A7 /* FileSystemNode */,
 				A5A1F6531786D7D100DE66C6 /* libimobiledevice */,
@@ -750,6 +764,7 @@
 				A53A3C181690794D00C19F81 /* main.m in Sources */,
 				A53A3C1F1690794D00C19F81 /* AppDelegate.m in Sources */,
 				A5EBFA4716907AA800E003A2 /* DeviceInfo.m in Sources */,
+				A548CC7D1861A60500FC1DB7 /* JAAIOSDeviceInfoManager.m in Sources */,
 				A513293117845966006D3CDE /* Helper.m in Sources */,
 				A5EBFA4B16907B1400E003A2 /* MobileDeviceServer.m in Sources */,
 				A5EBFA4F16907B5500E003A2 /* ItemCellView.m in Sources */,

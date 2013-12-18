@@ -14,9 +14,7 @@
 
 @interface DeviceInfo : NSObject <NSTableViewDelegate> {
 	
-	NSArray*				m_DevicesDict;
 	MobileDeviceServer*		mobileDeviceServer;
-	NSArray*				m_AppsList;
 }
 
 - (void)setupWithMobileDeviceServer:(MobileDeviceServer*) mobileDeviceServer;
