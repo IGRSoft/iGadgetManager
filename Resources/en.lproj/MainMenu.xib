@@ -128,7 +128,7 @@
                     <tabView initialItem="540" id="536">
                         <rect key="frame" x="13" y="42" width="630" height="591"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <font key="font" metaFont="system"/>
+                        <font key="font" size="14" name="HelveticaNeue"/>
                         <tabViewItems>
                             <tabViewItem label="Summary" identifier="1" id="540">
                                 <view key="view" id="541">
@@ -144,7 +144,7 @@
                                             <rect key="frame" x="14" y="513" width="88" height="24"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Device" id="577">
-                                                <font key="font" metaFont="systemBold" size="20"/>
+                                                <font key="font" size="20" name="HelveticaNeue-Bold"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -153,7 +153,7 @@
                                             <rect key="frame" x="14" y="396" width="238" height="24"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Advanced Information:" id="587">
-                                                <font key="font" metaFont="systemBold" size="20"/>
+                                                <font key="font" size="20" name="HelveticaNeue-Bold"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -162,7 +162,7 @@
                                             <rect key="frame" x="202" y="513" width="120" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Name:" id="579">
-                                                <font key="font" metaFont="systemBold"/>
+                                                <font key="font" size="14" name="HelveticaNeue-Bold"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -171,7 +171,7 @@
                                             <rect key="frame" x="202" y="488" width="120" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Software version:" id="580">
-                                                <font key="font" metaFont="systemBold"/>
+                                                <font key="font" size="14" name="HelveticaNeue-Bold"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -180,7 +180,7 @@
                                             <rect key="frame" x="202" y="463" width="120" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Serial number:" id="581">
-                                                <font key="font" metaFont="systemBold"/>
+                                                <font key="font" size="14" name="HelveticaNeue-Bold"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -189,7 +189,7 @@
                                             <rect key="frame" x="202" y="438" width="120" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Phone number:" id="582">
-                                                <font key="font" metaFont="systemBold"/>
+                                                <font key="font" size="14" name="HelveticaNeue-Bold"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -198,7 +198,7 @@
                                             <rect key="frame" x="324" y="513" width="229" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Please, connect your iDevice" id="583">
-                                                <font key="font" metaFont="system"/>
+                                                <font key="font" size="14" name="HelveticaNeue"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -207,7 +207,7 @@
                                             <rect key="frame" x="324" y="488" width="229" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Please, connect your iDevice" id="586">
-                                                <font key="font" metaFont="system"/>
+                                                <font key="font" size="14" name="HelveticaNeue"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -216,7 +216,7 @@
                                             <rect key="frame" x="324" y="463" width="229" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Please, connect your iDevice" id="585">
-                                                <font key="font" metaFont="system"/>
+                                                <font key="font" size="14" name="HelveticaNeue"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -225,7 +225,7 @@
                                             <rect key="frame" x="324" y="438" width="229" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Please, connect your iDevice" id="584">
-                                                <font key="font" metaFont="system"/>
+                                                <font key="font" size="14" name="HelveticaNeue"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -234,7 +234,7 @@
                                             <rect key="frame" x="14" y="371" width="233" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Baseband:" id="588">
-                                                <font key="font" metaFont="systemBold"/>
+                                                <font key="font" size="14" name="HelveticaNeue-Bold"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -243,7 +243,7 @@
                                             <rect key="frame" x="249" y="371" width="304" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Please, connect your iDevice" id="589">
-                                                <font key="font" metaFont="system"/>
+                                                <font key="font" size="14" name="HelveticaNeue"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -259,7 +259,7 @@
                                             <rect key="frame" x="14" y="346" width="233" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Bootloader:" id="590">
-                                                <font key="font" metaFont="systemBold"/>
+                                                <font key="font" size="14" name="HelveticaNeue-Bold"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -268,7 +268,7 @@
                                             <rect key="frame" x="249" y="346" width="304" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Please, connect your iDevice" id="591">
-                                                <font key="font" metaFont="system"/>
+                                                <font key="font" size="14" name="HelveticaNeue"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -277,7 +277,7 @@
                                             <rect key="frame" x="14" y="321" width="233" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Hardware model:" id="592">
-                                                <font key="font" metaFont="systemBold"/>
+                                                <font key="font" size="14" name="HelveticaNeue-Bold"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -286,7 +286,7 @@
                                             <rect key="frame" x="249" y="321" width="304" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Please, connect your iDevice" id="593">
-                                                <font key="font" metaFont="system"/>
+                                                <font key="font" size="14" name="HelveticaNeue"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -295,7 +295,7 @@
                                             <rect key="frame" x="14" y="271" width="233" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Unique device ID:" id="594">
-                                                <font key="font" metaFont="systemBold"/>
+                                                <font key="font" size="14" name="HelveticaNeue-Bold"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -304,7 +304,7 @@
                                             <rect key="frame" x="249" y="271" width="347" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Please, connect your iDevice" id="595">
-                                                <font key="font" metaFont="system"/>
+                                                <font key="font" size="14" name="HelveticaNeue"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -313,7 +313,7 @@
                                             <rect key="frame" x="14" y="296" width="233" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Model number:" id="621">
-                                                <font key="font" metaFont="systemBold"/>
+                                                <font key="font" size="14" name="HelveticaNeue-Bold"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -322,7 +322,7 @@
                                             <rect key="frame" x="249" y="296" width="347" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Please, connect your iDevice" id="622">
-                                                <font key="font" metaFont="system"/>
+                                                <font key="font" size="14" name="HelveticaNeue"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -331,7 +331,7 @@
                                             <rect key="frame" x="14" y="246" width="233" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Device color:" id="596">
-                                                <font key="font" metaFont="systemBold"/>
+                                                <font key="font" size="14" name="HelveticaNeue-Bold"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -340,7 +340,7 @@
                                             <rect key="frame" x="249" y="246" width="304" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Please, connect your iDevice" id="597">
-                                                <font key="font" metaFont="system"/>
+                                                <font key="font" size="14" name="HelveticaNeue"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -349,7 +349,7 @@
                                             <rect key="frame" x="14" y="221" width="233" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Product type:" id="598">
-                                                <font key="font" metaFont="systemBold"/>
+                                                <font key="font" size="14" name="HelveticaNeue-Bold"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -358,7 +358,7 @@
                                             <rect key="frame" x="249" y="221" width="304" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Please, connect your iDevice" id="599">
-                                                <font key="font" metaFont="system"/>
+                                                <font key="font" size="14" name="HelveticaNeue"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -367,7 +367,7 @@
                                             <rect key="frame" x="14" y="196" width="233" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="CPU architecture:" id="600">
-                                                <font key="font" metaFont="systemBold"/>
+                                                <font key="font" size="14" name="HelveticaNeue-Bold"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -376,7 +376,7 @@
                                             <rect key="frame" x="249" y="196" width="304" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Please, connect your iDevice" id="601">
-                                                <font key="font" metaFont="system"/>
+                                                <font key="font" size="14" name="HelveticaNeue"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -385,7 +385,7 @@
                                             <rect key="frame" x="14" y="171" width="233" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Hardware platform:" id="602">
-                                                <font key="font" metaFont="systemBold"/>
+                                                <font key="font" size="14" name="HelveticaNeue-Bold"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -394,7 +394,7 @@
                                             <rect key="frame" x="249" y="171" width="304" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Please, connect your iDevice" id="603">
-                                                <font key="font" metaFont="system"/>
+                                                <font key="font" size="14" name="HelveticaNeue"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -403,7 +403,7 @@
                                             <rect key="frame" x="14" y="121" width="233" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Bluetooth address:" id="604">
-                                                <font key="font" metaFont="systemBold"/>
+                                                <font key="font" size="14" name="HelveticaNeue-Bold"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -412,7 +412,7 @@
                                             <rect key="frame" x="249" y="121" width="304" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Please, connect your iDevice" id="605">
-                                                <font key="font" metaFont="system"/>
+                                                <font key="font" size="14" name="HelveticaNeue"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -421,7 +421,7 @@
                                             <rect key="frame" x="14" y="96" width="233" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Wi-Fi address:" id="606">
-                                                <font key="font" metaFont="systemBold"/>
+                                                <font key="font" size="14" name="HelveticaNeue-Bold"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -430,7 +430,7 @@
                                             <rect key="frame" x="249" y="96" width="304" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Please, connect your iDevice" id="607">
-                                                <font key="font" metaFont="system"/>
+                                                <font key="font" size="14" name="HelveticaNeue"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -439,7 +439,7 @@
                                             <rect key="frame" x="14" y="146" width="233" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Activated:" id="686">
-                                                <font key="font" metaFont="systemBold"/>
+                                                <font key="font" size="14" name="HelveticaNeue-Bold"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -448,7 +448,7 @@
                                             <rect key="frame" x="249" y="146" width="304" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Please, connect your iDevice" id="685">
-                                                <font key="font" metaFont="system"/>
+                                                <font key="font" size="14" name="HelveticaNeue"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -581,7 +581,7 @@
                                                                                 <rect key="frame" x="51" y="24" width="339" height="18"/>
                                                                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                                                                 <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="left" title="name" id="640">
-                                                                                    <font key="font" metaFont="system" size="14"/>
+                                                                                    <font key="font" size="14" name="HelveticaNeue"/>
                                                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
@@ -590,7 +590,7 @@
                                                                                 <rect key="frame" x="53" y="1" width="346" height="21"/>
                                                                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                                                                 <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="details" id="641">
-                                                                                    <font key="font" metaFont="smallSystem"/>
+                                                                                    <font key="font" size="12" name="HelveticaNeue"/>
                                                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
@@ -666,7 +666,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="Save Video to /Users/Shared/iGadget_Manager_Movie.mov" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="jI7-R3-EWZ">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                <font key="font" metaFont="system"/>
+                                                <font key="font" size="14" name="HelveticaNeue"/>
                                             </buttonCell>
                                             <connections>
                                                 <action selector="onTouchSaveVideo:" target="494" id="JVL-q3-VRr"/>
@@ -681,7 +681,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <browser verticalHuggingPriority="750" allowsExpansionToolTips="YES" enabled="YES" hasHorizontalScroller="YES" defaultColumnWidth="130" minColumnWidth="100" allowsTypeSelect="YES" columnResizingType="user" id="7hX-ob-xXt">
-                                            <rect key="frame" x="17" y="17" width="576" height="545"/>
+                                            <rect key="frame" x="17" y="16.999999881474576" width="576" height="523"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                             <connections>
                                                 <outlet property="delegate" destination="494" id="pKf-sh-g2r"/>
@@ -700,7 +700,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="push" title="Reboot" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="v21-Ls-bJC">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="system"/>
+                                                <font key="font" size="14" name="HelveticaNeue"/>
                                             </buttonCell>
                                             <connections>
                                                 <action selector="rebootDevice:" target="648" id="9Wb-qz-6do"/>
@@ -712,7 +712,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="push" title="Shutdown" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mef-Wr-Gvw">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="system"/>
+                                                <font key="font" size="14" name="HelveticaNeue"/>
                                             </buttonCell>
                                             <connections>
                                                 <action selector="shutdownDevice:" target="648" id="Bdz-CI-sc0"/>
@@ -724,7 +724,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="push" title="Enter Recovery" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zhe-Xi-g4d">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="system"/>
+                                                <font key="font" size="14" name="HelveticaNeue"/>
                                             </buttonCell>
                                             <connections>
                                                 <action selector="recoveryModeDevice:" target="648" id="jIA-pc-kpL"/>
@@ -751,7 +751,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="smallSquare" title="IGR Software" bezelStyle="smallSquare" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="okf-UI-z9q">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
+                            <font key="font" size="14" name="HelveticaNeue"/>
                         </buttonCell>
                         <connections>
                             <action selector="goToURL:" target="494" id="giI-4q-DeE"/>

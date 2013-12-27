@@ -19,7 +19,7 @@
 
 #define FPS 24
 #define MOVIE_FILE_NAME @"/Users/Shared/iGadget_Manager_Movie.mov"
-
+#define DEFAULT_FONT [NSFont fontWithName:@"HelveticaNeue" size:14]
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
@@ -37,6 +37,8 @@
     {
 		[self.btnSaveVideo setEnabled:NO];
 	}
+    
+    [self.fileManager setFont:DEFAULT_FONT];
 }
 
 - (void)newDeviceDetected:(NSString*)connectedDevice
@@ -51,8 +53,7 @@
 	[self.deviceInfo updateViewsWithCompletionBlock:^(FileSystemItem *fileSystem)
     {
         _rootNode = fileSystem;
-        [weakSelf.fileManager setColumnResizingType:NSBrowserAutoColumnResizing];
-        [weakSelf.fileManager reloadColumn:0];
+        [weakSelf.fileManager loadColumnZero];
     }];
 }
 
@@ -223,6 +224,7 @@
 
 - (NSInteger)browser:(NSBrowser *)browser numberOfChildrenOfItem:(id)item
 {
+    [browser sizeToFit];
     FileSystemItem *node = (FileSystemItem *)item;
     return node.children.count;
 }
@@ -243,6 +245,25 @@
 {
     FileSystemItem *node = (FileSystemItem *)item;
     return node.name;
+}
+
+- (CGFloat)browser:(NSBrowser *)browser shouldSizeColumn:(NSInteger)columnIndex forUserResize:(BOOL)forUserResize toWidth:(CGFloat)suggestedWidth
+{
+    CGFloat width = 100.f;
+    
+    if (!forUserResize) {
+        FileSystemItem *item = [browser parentForItemsInColumn:columnIndex];
+        NSDictionary *attributes = @{NSFontAttributeName: DEFAULT_FONT};
+        for (FileSystemItem *children in item.children)
+        {
+            NSSize size = [children.name sizeWithAttributes:attributes];
+            width = (width > size.width) ? width : size.width;
+        }
+    }
+    
+    width +=40;
+    
+    return width;
 }
 
 @end
