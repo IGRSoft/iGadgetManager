@@ -11,6 +11,7 @@
 @class MobileDeviceServer;
 @class NSColoredView;
 @class LBProgressBar;
+@class FileSystemItem;
 
 @interface DeviceInfo : NSObject <NSTableViewDelegate> {
 	
@@ -18,7 +19,7 @@
 }
 
 - (void)setupWithMobileDeviceServer:(MobileDeviceServer*) mobileDeviceServer;
-- (void)updateViews;
+- (void)updateViewsWithCompletionBlock:(void(^)(FileSystemItem* fileSystem))block;
 
 ///////////////////////////////Summary///////////////////////////////
 //Basic

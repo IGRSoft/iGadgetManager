@@ -7,6 +7,7 @@
 //
 
 #import "MobileDeviceServer.h"
+#import "FileSystemItem.h"
 
 #include <libimobiledevice/libimobiledevice.h>
 #include <libimobiledevice/installation_proxy.h>
@@ -20,7 +21,7 @@
 #include <stdio.h>
 #include <string.h>
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, deviceInfoType) {
 	
 	deviceInfoTypeName = 0,
 	deviceInfoTypeProductType,
@@ -45,16 +46,16 @@ typedef enum {
 	
 	deviceInfoTypeCount
 
-} deviceInfoType;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, deviceAFCInfoType) {
 	
 	deviceAFSTotalBytes = 0,
 	deviceAFSFreeBytes,
 	
 	deviceAFSInfoTypeCount
 	
-} deviceAFCInfoType;
+};
 
 static MobileDeviceServer* tmpSelf = nil;
 
@@ -66,11 +67,12 @@ static MobileDeviceServer* tmpSelf = nil;
 	screenshotr_client_t shotr;
 }
 
-void device_event_cb(const idevice_event_t* event, void* userdata);
 - (NSString *) deviceInfoFor:(deviceInfoType)deviceInfoType;
 - (NSString *) deviceAFCInfoFor:(deviceAFCInfoType)deviceAFCInfoType;
 - (void) checkNewDeviceEvent:(const idevice_event_t*)event withUserData:(void*)userdata;
 - (lockdownd_client_t) getInfoForDevice:(idevice_t)_device;
+
+void device_event_cb(const idevice_event_t* event, void* userdata);
 NSString* load_icon (sbservices_client_t sbs, const char *_id);
 void status_cb(const char *operation, plist_t status, void *unused);
 
@@ -216,7 +218,7 @@ void status_cb(const char *operation, plist_t status, void *unused);
 	return _afc;
 }
 
-- (bool) isConnected
+- (BOOL) isConnected
 {
 	return device != nil;
 }
@@ -771,9 +773,9 @@ void status_cb(const char *operation, plist_t status, void *unused)
 	return img;
 }
 
-- (bool) createScrenshotService
+- (BOOL) createScrenshotService
 {
-	bool ret = false;
+	BOOL ret = false;
 	if (!deviceConnected) {
 		return false;
 	}
@@ -805,7 +807,7 @@ void status_cb(const char *operation, plist_t status, void *unused)
 	return ret;
 }
 
-- (bool) deviceEnterRecovery
+- (BOOL) deviceEnterRecovery
 {
 	lockdownd_client_t _lockdownd = [self getInfoForDevice:device];
 	lockdownd_error_t isSuccessful = lockdownd_enter_recovery(_lockdownd);
@@ -821,7 +823,7 @@ void status_cb(const char *operation, plist_t status, void *unused)
 	return isSuccessful == LOCKDOWN_E_SUCCESS;
 }
 
-- (bool) deviceReboot
+- (BOOL) deviceReboot
 {
 	lockdownd_client_t _lockdownd = [self getInfoForDevice:device];
 	diagnostics_relay_client_t diagnostics_client = NULL;
@@ -860,7 +862,7 @@ void status_cb(const char *operation, plist_t status, void *unused)
 	return result == DIAGNOSTICS_RELAY_E_SUCCESS;
 }
 
-- (bool) deviceShutdown
+- (BOOL) deviceShutdown
 {
 	lockdownd_client_t _lockdownd = [self getInfoForDevice:device];
 	diagnostics_relay_client_t diagnostics_client = NULL;
@@ -899,73 +901,65 @@ void status_cb(const char *operation, plist_t status, void *unused)
 	return result == DIAGNOSTICS_RELAY_E_SUCCESS;
 }
 
-- (NSDictionary*) getFileSystem
+- (FileSystemItem*) getFileSystem
 {
 	afc_client_t _afc = [self getAFCInfoForDevice:device];
 	
-	char **list = NULL;
+	FileSystemItem* fs = [[FileSystemItem alloc] initRoot];
 	
-	NSMutableDictionary* fs = nil;
-	
-	char* dir = "/";
-	
-	afc_error_t err = afc_read_directory (_afc, dir, &list);
-    if ( err == AFC_E_SUCCESS )
-    {
-		fs = [NSMutableDictionary dictionary];
-		for (int i = 0; list[i]; i++) {
-			
-			if (strcmp(list[i], ".") != 0 && strcmp(list[i], "..") != 0) {
-				fs[[NSString stringWithCString:list[i] encoding:NSUTF8StringEncoding]] = [self getInfoForFile:list[i] inDir:dir withAFC:_afc];
-			}
-			
-			free(list[i]);
-		}
-        
-    }
+    fs = [self getFilesForDir:fs withAFC:_afc];
+    
     return fs;
 }
 
-- (NSDictionary*) getFilesForDir:(char*)dir withAFC:(afc_client_t) _afc
+- (FileSystemItem*) getFilesForDir:(FileSystemItem*)dir withAFC:(afc_client_t) _afc
 {
 	char **list = NULL;
 	
-	NSMutableDictionary* fs = nil;
+	FileSystemItem *fileSystemItem = nil;
 	
-	afc_error_t err = afc_read_directory (_afc, dir, &list);
+	afc_error_t err = afc_read_directory (_afc, [dir UTFPath], &list);
     if ( err == AFC_E_SUCCESS )
     {
-		fs = [NSMutableDictionary dictionary];
-		for (int i = 0; list[i]; i++) {
-			if (strcmp(list[i], ".") != 0 && strcmp(list[i], "..") != 0) {
-				fs[[NSString stringWithCString:list[i] encoding:NSUTF8StringEncoding]] = [self getInfoForFile:list[i] inDir:dir withAFC:_afc];
+		fileSystemItem = [[FileSystemItem alloc] initWithParent:dir];
+		for (int i = 0; list[i]; i++)
+        {
+			if (strcmp(list[i], ".") != 0 && strcmp(list[i], "..") != 0)
+            {
+                FileSystemItem *item = [self getInfoForFile:list[i] inDir:dir withAFC:_afc];
+                
+                if (item && [item isValid])
+                {
+                    [fileSystemItem addChildren:item];
+                }
 			}
 			
 			free(list[i]);
 		}
     }
 	
-	return fs;
+	return fileSystemItem;
 }
 
-- (NSMutableDictionary*)getInfoForFile:(const char*)file inDir:(char*)dir withAFC:(afc_client_t) _afc
+- (FileSystemItem*)getInfoForFile:(const char*)file inDir:(FileSystemItem*)dir withAFC:(afc_client_t) _afc
 {
-	fprintf(stdout,"%s/%s\n", dir, file);
-	
+    FileSystemItem *fileSystemItem = [[FileSystemItem alloc] initWithParent:dir];
 	NSMutableDictionary* fileDic = [NSMutableDictionary dictionary];
 	char **info = NULL;
 	
 	char fullPath[255];
-	strcpy( fullPath, dir );
-	if (strcmp(fullPath, "/")) {
-		strcat(fullPath, "/");
-	}
-	strcat(fullPath, file);
+    const char* cDir = [dir UTFPath];
+	strcpy( fullPath, cDir);
+	strcat( fullPath, file);
 
+    fprintf(stdout,"%s\n", fullPath);
+    
 	afc_error_t err = afc_get_file_info(_afc, fullPath, &info);
 	
 	if ( err == AFC_E_SUCCESS )
 	{
+        fileDic[NSURLNameKey] = [NSString stringWithUTF8String:file];
+        
 		for (int j = 0; info[j]; j+=2) {
 			
 			fprintf(stdout,"\t %s = %s \n", info[j], info[j+1]);
@@ -973,31 +967,44 @@ void status_cb(const char *operation, plist_t status, void *unused)
 			if (strcmp(info[j], "st_size") == 0) {
 				
 				NSString *size = [NSString stringWithUTF8String:info[j+1]];
-				fileDic[KEY_SIZE] = @([size intValue]);
+				fileDic[NSURLFileSizeKey] = @([size intValue]);
 			}
 			else if (strcmp(info[j], "st_ifmt") == 0) {
 				if (strcmp(info[j+1], "S_IFDIR") == 0) {
-					fileDic[KEY_DIR] = @(YES);
+					fileDic[NSURLIsDirectoryKey] = @(YES);
 				}
 				else
 				{
-					fileDic[KEY_DIR] = @(NO);
+					fileDic[NSURLIsDirectoryKey] = @(NO);
 				}
-				if ([fileDic[KEY_DIR] boolValue]) {
-
-					fileDic[KEY_CONTENT] = [self getFilesForDir:fullPath withAFC:_afc];
-				}
-			}
+            }
 		}
 		
 		free(info);
 	}
 	else
 	{
-		
+		return fileSystemItem;
 	}
 	
-	return fileDic;
+    [fileSystemItem updateFromDictionary:fileDic];
+    
+    if ([fileSystemItem isDir])
+    {
+        FileSystemItem *item = [self getFilesForDir:fileSystemItem withAFC:_afc];
+        
+        if (item && [item.children count])
+        {
+            [fileSystemItem setChildren:item.children];
+        }
+    }
+    
+    if (![fileSystemItem isValid])
+    {
+        fileSystemItem = nil;
+    }
+    
+	return fileSystemItem;
 }
 
 @end

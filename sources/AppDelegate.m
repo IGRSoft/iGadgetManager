@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "DeviceInfo.h"
 #import "Helper.h"
-#import "FileSystemNode.h"
+#import "FileSystemItem.h"
 
 #import <QTKit/QTKit.h>
 
@@ -33,7 +33,8 @@
 	self.isDeviceConnected = false;
 	self.useRecordVideo = false;
 	
-	if (![Helper isVideoRecordSupported]) {
+	if (![Helper isVideoRecordSupported])
+    {
 		[self.btnSaveVideo setEnabled:NO];
 	}
 }
@@ -45,9 +46,14 @@
 	self.isDeviceConnected = (connectedDevice != nil);
 	
 	[self.deviceInfo setupWithMobileDeviceServer:self.mobileDeviceServer];
-	[self.deviceInfo updateViews];
-	
-	_rootNode = [[FileSystemNode alloc] initWithURL:[NSURL fileURLWithPath:@"/"]];
+    
+    __weak AppDelegate *weakSelf = self;
+	[self.deviceInfo updateViewsWithCompletionBlock:^(FileSystemItem *fileSystem)
+    {
+        _rootNode = fileSystem;
+        [weakSelf.fileManager setColumnResizingType:NSBrowserAutoColumnResizing];
+        [weakSelf.fileManager reloadColumn:0];
+    }];
 }
 
 - (void)deviceRemoved
@@ -61,7 +67,8 @@
 
 - (void)updateAppList
 {
-	if (!self.isDeviceConnected) {
+	if (!self.isDeviceConnected)
+    {
 		return;
 	}
 	
@@ -72,7 +79,8 @@
 
 - (void)tabView:(NSTabView *)tabView didSelectTabViewItem:(NSTabViewItem *)tabViewItem
 {
-	if (!self.isDeviceConnected) {
+	if (!self.isDeviceConnected)
+    {
 		return;
 	}
 	
@@ -90,7 +98,8 @@
 	}
 	else
 	{
-		if (m_QTMovie) {
+		if (m_QTMovie)
+        {
 			[m_QTMovie stop];
 			m_QTMovie = nil;
 			m_iMoviePos = 0;
@@ -104,23 +113,29 @@
 - (void)handleImageCaptureTimerTimer:(NSTimer *)theTimer
 {
 	dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-	dispatch_async(queue, ^{
-		dispatch_async(dispatch_get_main_queue(), ^{
+	dispatch_async(queue, ^
+    {
+		dispatch_async(dispatch_get_main_queue(), ^
+        {
 			NSImage *img = [self.mobileDeviceServer takeScreenshot];
 			if (img)
 			{
 				[_imageCapture setImage:img];
 
-				if (_useRecordVideo) {
+				if (_useRecordVideo)
+                {
 					NSError *error = nil;
-					if (!m_QTMovie) {
+					if (!m_QTMovie)
+                    {
 						NSFileManager *fm = [NSFileManager defaultManager];
-						if ([fm fileExistsAtPath:MOVIE_FILE_NAME isDirectory:nil]) {
+						if ([fm fileExistsAtPath:MOVIE_FILE_NAME isDirectory:nil])
+                        {
 							[fm removeItemAtPath:MOVIE_FILE_NAME error:&error];
 						}
 						
 						m_QTMovie = [[QTMovie alloc] initToWritableFile:MOVIE_FILE_NAME error:&error];
-						if (error) {
+						if (error)
+                        {
 							NSLog(@"Could not create QTMovie: %@", [error localizedDescription]);
 							return;
 						}
@@ -186,10 +201,12 @@
 {
 	tool = [tool lowercaseString];
 	
-	if ([tool isEqualToString:@"donate"]) {
+	if ([tool isEqualToString:@"donate"])
+    {
 		return [NSURL URLWithString:@"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ENPVXEYJUQU9G"];
 	}
-	else if ([tool isEqualToString:@"igr software"]) {
+	else if ([tool isEqualToString:@"igr software"])
+    {
 		return [NSURL URLWithString:@"http://www.igrsoft.com"];
 	}
 	
@@ -204,24 +221,28 @@
     return _rootNode;
 }
 
-- (NSInteger)browser:(NSBrowser *)browser numberOfChildrenOfItem:(id)item {
-    FileSystemNode *node = (FileSystemNode *)item;
+- (NSInteger)browser:(NSBrowser *)browser numberOfChildrenOfItem:(id)item
+{
+    FileSystemItem *node = (FileSystemItem *)item;
     return node.children.count;
 }
 
-- (id)browser:(NSBrowser *)browser child:(NSInteger)index ofItem:(id)item {
-    FileSystemNode *node = (FileSystemNode *)item;
+- (id)browser:(NSBrowser *)browser child:(NSInteger)index ofItem:(id)item
+{
+    FileSystemItem *node = (FileSystemItem *)item;
     return [node.children objectAtIndex:index];
 }
 
-- (BOOL)browser:(NSBrowser *)browser isLeafItem:(id)item {
-    FileSystemNode *node = (FileSystemNode *)item;
-    return !node.isDirectory;
+- (BOOL)browser:(NSBrowser *)browser isLeafItem:(id)item
+{
+    FileSystemItem *node = (FileSystemItem *)item;
+    return !node.isDir;
 }
 
-- (id)browser:(NSBrowser *)browser objectValueForItem:(id)item {
-    FileSystemNode *node = (FileSystemNode *)item;
-    return node.displayName;
+- (id)browser:(NSBrowser *)browser objectValueForItem:(id)item
+{
+    FileSystemItem *node = (FileSystemItem *)item;
+    return node.name;
 }
 
 @end

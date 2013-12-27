@@ -9,17 +9,21 @@
 #import <Foundation/Foundation.h>
 
 @protocol MobileDeviceServerDelegate <NSObject>
+
 @optional
 - (void)newDeviceDetected:(NSString*)connectedDevice;
 - (void)deviceRemoved;
 - (void)updateAppList;
+
 @end
+
+@class FileSystemItem;
 
 @interface MobileDeviceServer : NSObject
 {
 	NSMutableDictionary*			m_PlistDict;
 	id <MobileDeviceServerDelegate>	_delegate;
-	bool deviceConnected;
+	BOOL deviceConnected;
 }
 
 #define KEY_PATH	@"path"
@@ -30,7 +34,7 @@
 @property (nonatomic, strong) id <MobileDeviceServerDelegate> delegate;
 
 - (void) scanForDevice;
-- (bool) isConnected;
+- (BOOL) isConnected;
 - (NSString *) deviceName;
 - (NSString *) deviceProductType;
 - (NSString *) deviceProductVersion;
@@ -54,10 +58,10 @@
 - (NSString *) deviceAFSFreeBytes;
 - (void) deviceAFSUninstallAppID:(NSString*) appID;
 - (NSArray*) appsList;
-- (bool) createScrenshotService;
+- (BOOL) createScrenshotService;
 - (NSImage*) takeScreenshot;
-- (bool) deviceEnterRecovery;
-- (bool) deviceReboot;
-- (bool) deviceShutdown;
-- (NSDictionary*) getFileSystem;
+- (BOOL) deviceEnterRecovery;
+- (BOOL) deviceReboot;
+- (BOOL) deviceShutdown;
+- (FileSystemItem*) getFileSystem;
 @end

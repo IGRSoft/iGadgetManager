@@ -19,9 +19,10 @@
 		A56D5F791856596500CF815D /* libusbmuxd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A56D5F701856593800CF815D /* libusbmuxd.a */; };
 		A586F6271696F82D008E9C21 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A586F6261696F82D008E9C21 /* QTKit.framework */; };
 		A5A1F87C1786D81300DE66C6 /* libimobiledevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A1F8411786D7D200DE66C6 /* libimobiledevice.a */; };
+		A5A2053B1861FD9B00DDE4F6 /* FileSystemManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A2053A1861FD9B00DDE4F6 /* FileSystemManager.m */; };
+		A5A2053E1861FE4400DDE4F6 /* FileSystemItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A2053D1861FE4400DDE4F6 /* FileSystemItem.m */; };
 		A5C3296C16B954E9003EFD88 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5C3296A16B954E9003EFD88 /* MainMenu.xib */; };
 		A5E0B28816B278F800E8627E /* icon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = A5E0B28716B278F800E8627E /* icon.iconset */; };
-		A5E86E64179FB3CE0029B4A7 /* FileSystemNode.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E86E63179FB3CE0029B4A7 /* FileSystemNode.m */; };
 		A5EBFA4716907AA800E003A2 /* DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EBFA4616907AA800E003A2 /* DeviceInfo.m */; };
 		A5EBFA4B16907B1400E003A2 /* MobileDeviceServer.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EBFA4A16907B1400E003A2 /* MobileDeviceServer.m */; };
 		A5EBFA4F16907B5500E003A2 /* ItemCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EBFA4E16907B5500E003A2 /* ItemCellView.m */; };
@@ -257,10 +258,12 @@
 		A56D5F341856593700CF815D /* libusbmuxd.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = libusbmuxd.xcodeproj; sourceTree = "<group>"; };
 		A586F6261696F82D008E9C21 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = System/Library/Frameworks/QTKit.framework; sourceTree = SDKROOT; };
 		A5A1F71F1786D7D100DE66C6 /* libimobiledevice.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = libimobiledevice.xcodeproj; sourceTree = "<group>"; };
+		A5A205391861FD9B00DDE4F6 /* FileSystemManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileSystemManager.h; sourceTree = "<group>"; };
+		A5A2053A1861FD9B00DDE4F6 /* FileSystemManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileSystemManager.m; sourceTree = "<group>"; };
+		A5A2053C1861FE4400DDE4F6 /* FileSystemItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileSystemItem.h; path = sources/FileSystemItem.h; sourceTree = SOURCE_ROOT; };
+		A5A2053D1861FE4400DDE4F6 /* FileSystemItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileSystemItem.m; path = sources/FileSystemItem.m; sourceTree = SOURCE_ROOT; };
 		A5C3296B16B954E9003EFD88 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		A5E0B28716B278F800E8627E /* icon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = icon.iconset; sourceTree = "<group>"; };
-		A5E86E62179FB3CE0029B4A7 /* FileSystemNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileSystemNode.h; sourceTree = "<group>"; };
-		A5E86E63179FB3CE0029B4A7 /* FileSystemNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileSystemNode.m; sourceTree = "<group>"; };
 		A5EBFA4516907AA800E003A2 /* DeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfo.h; sourceTree = "<group>"; };
 		A5EBFA4616907AA800E003A2 /* DeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfo.m; sourceTree = "<group>"; };
 		A5EBFA4916907B1400E003A2 /* MobileDeviceServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobileDeviceServer.h; sourceTree = "<group>"; };
@@ -316,7 +319,7 @@
 		A53A3BFC1690794D00C19F81 = {
 			isa = PBXGroup;
 			children = (
-				A53A3C111690794D00C19F81 /* sources */,
+				A53A3C111690794D00C19F81 /* Sources */,
 				A53A3C0A1690794D00C19F81 /* Frameworks */,
 				A5EBFA5D1690946300E003A2 /* Resources */,
 				A53A3C081690794D00C19F81 /* Products */,
@@ -351,7 +354,7 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		A53A3C111690794D00C19F81 /* sources */ = {
+		A53A3C111690794D00C19F81 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				A513292E178458F4006D3CDE /* Helper */,
@@ -364,7 +367,12 @@
 				A53A3C1D1690794D00C19F81 /* AppDelegate.h */,
 				A53A3C1E1690794D00C19F81 /* AppDelegate.m */,
 				A53A3C121690794D00C19F81 /* other */,
+				A5A205391861FD9B00DDE4F6 /* FileSystemManager.h */,
+				A5A2053A1861FD9B00DDE4F6 /* FileSystemManager.m */,
+				A5A2053C1861FE4400DDE4F6 /* FileSystemItem.h */,
+				A5A2053D1861FE4400DDE4F6 /* FileSystemItem.m */,
 			);
+			name = Sources;
 			path = sources;
 			sourceTree = "<group>";
 		};
@@ -446,15 +454,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A5E86E61179FB3CE0029B4A7 /* FileSystemNode */ = {
-			isa = PBXGroup;
-			children = (
-				A5E86E62179FB3CE0029B4A7 /* FileSystemNode.h */,
-				A5E86E63179FB3CE0029B4A7 /* FileSystemNode.m */,
-			);
-			path = FileSystemNode;
-			sourceTree = "<group>";
-		};
 		A5EBFA4C16907B5500E003A2 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
@@ -484,7 +483,6 @@
 			children = (
 				A548CC7A1861A60500FC1DB7 /* JAAIOSDeviceInfo */,
 				A507868C17C3BD5D00EB0393 /* LBProgressBar */,
-				A5E86E61179FB3CE0029B4A7 /* FileSystemNode */,
 				A5A1F6531786D7D100DE66C6 /* libimobiledevice */,
 			);
 			path = External;
@@ -760,16 +758,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5E86E64179FB3CE0029B4A7 /* FileSystemNode.m in Sources */,
 				A53A3C181690794D00C19F81 /* main.m in Sources */,
 				A53A3C1F1690794D00C19F81 /* AppDelegate.m in Sources */,
 				A5EBFA4716907AA800E003A2 /* DeviceInfo.m in Sources */,
 				A548CC7D1861A60500FC1DB7 /* JAAIOSDeviceInfoManager.m in Sources */,
+				A5A2053B1861FD9B00DDE4F6 /* FileSystemManager.m in Sources */,
 				A513293117845966006D3CDE /* Helper.m in Sources */,
 				A5EBFA4B16907B1400E003A2 /* MobileDeviceServer.m in Sources */,
 				A5EBFA4F16907B5500E003A2 /* ItemCellView.m in Sources */,
 				A50786A117C3BD5D00EB0393 /* LBProgressBar.m in Sources */,
 				A5EBFABE1690A40D00E003A2 /* NSColoredView.m in Sources */,
+				A5A2053E1861FE4400DDE4F6 /* FileSystemItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

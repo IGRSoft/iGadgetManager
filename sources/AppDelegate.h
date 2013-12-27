@@ -11,7 +11,7 @@
 
 @class DeviceInfo;
 @class QTMovie;
-@class FileSystemNode;
+@class FileSystemItem;
 
 @interface AppDelegate : NSObject <NSApplicationDelegate, MobileDeviceServerDelegate, NSTabViewDelegate, NSBrowserDelegate> {
 	
@@ -22,7 +22,7 @@
 	QTMovie*						m_QTMovie;
 	int								m_iMoviePos;
 
-	FileSystemNode					*_rootNode;
+	FileSystemItem					*_rootNode;
 }
 
 @property (assign) IBOutlet NSWindow *window;
