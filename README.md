@@ -17,9 +17,6 @@ Prepare
 
 * git clone git://github.com/iKorich/iGadgetManager.git
 * git submodule update (or git submodule update --init --recursive)
-* cd ./External/libimobiledevice
-* git checkout osx
-* git submodule update (or git submodule update --init --recursive)
 
 Building
 -------------
