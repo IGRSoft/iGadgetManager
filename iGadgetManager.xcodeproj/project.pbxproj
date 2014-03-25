@@ -18,11 +18,12 @@
 		A548CC7D1861A60500FC1DB7 /* JAAIOSDeviceInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A548CC7C1861A60500FC1DB7 /* JAAIOSDeviceInfoManager.m */; };
 		A56D5F791856596500CF815D /* libusbmuxd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A56D5F701856593800CF815D /* libusbmuxd.a */; };
 		A586F6271696F82D008E9C21 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A586F6261696F82D008E9C21 /* QTKit.framework */; };
-		A5A1F87C1786D81300DE66C6 /* libimobiledevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A1F8411786D7D200DE66C6 /* libimobiledevice.a */; };
+		A5A1F87C1786D81300DE66C6 /* libimobiledevice in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A1F8411786D7D200DE66C6 /* libimobiledevice */; };
 		A5A2053B1861FD9B00DDE4F6 /* FileSystemManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A2053A1861FD9B00DDE4F6 /* FileSystemManager.m */; };
 		A5A2053E1861FE4400DDE4F6 /* FileSystemItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A2053D1861FE4400DDE4F6 /* FileSystemItem.m */; };
 		A5C3296C16B954E9003EFD88 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5C3296A16B954E9003EFD88 /* MainMenu.xib */; };
 		A5E0B28816B278F800E8627E /* icon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = A5E0B28716B278F800E8627E /* icon.iconset */; };
+		A5E83C6918E1733D00939202 /* libplist.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E83C5D18E1731100939202 /* libplist.a */; };
 		A5EBFA4716907AA800E003A2 /* DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EBFA4616907AA800E003A2 /* DeviceInfo.m */; };
 		A5EBFA4B16907B1400E003A2 /* MobileDeviceServer.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EBFA4A16907B1400E003A2 /* MobileDeviceServer.m */; };
 		A5EBFA4F16907B5500E003A2 /* ItemCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EBFA4E16907B5500E003A2 /* ItemCellView.m */; };
@@ -233,6 +234,55 @@
 			remoteGlobalIDString = 96B88B2F174E0B9900B868D9;
 			remoteInfo = imobiledevice.a;
 		};
+		A5E83C5418E1731100939202 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5A1F71F1786D7D100DE66C6 /* libimobiledevice.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9653BEB418E0334D00392466;
+			remoteInfo = idevicecrashreport;
+		};
+		A5E83C5618E1731100939202 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5A1F71F1786D7D100DE66C6 /* libimobiledevice.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9649448218BBBD2000EDE08B;
+			remoteInfo = idevicename;
+		};
+		A5E83C5C18E1731100939202 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5E83BB018E1731000939202 /* libplist.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9649456E18BCF1C900EDE08B;
+			remoteInfo = "libplist-static";
+		};
+		A5E83C5E18E1731100939202 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5E83BB018E1731000939202 /* libplist.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 964945BC18BD08A000EDE08B;
+			remoteInfo = "libplist-dylib";
+		};
+		A5E83C6018E1731100939202 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5E83BB018E1731000939202 /* libplist.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9602A1E418C1F324002FD8C5;
+			remoteInfo = "libplist++-static";
+		};
+		A5E83C6218E1731100939202 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5E83BB018E1731000939202 /* libplist.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9602A1FA18C1F388002FD8C5;
+			remoteInfo = "libplist++-dylib";
+		};
+		A5E83C6718E1733700939202 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5E83BB018E1731000939202 /* libplist.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9649456D18BCF1C900EDE08B;
+			remoteInfo = "libplist-static";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -264,6 +314,7 @@
 		A5A2053D1861FE4400DDE4F6 /* FileSystemItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileSystemItem.m; path = sources/FileSystemItem.m; sourceTree = SOURCE_ROOT; };
 		A5C3296B16B954E9003EFD88 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		A5E0B28716B278F800E8627E /* icon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = icon.iconset; sourceTree = "<group>"; };
+		A5E83BB018E1731000939202 /* libplist.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = libplist.xcodeproj; sourceTree = "<group>"; };
 		A5EBFA4516907AA800E003A2 /* DeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfo.h; sourceTree = "<group>"; };
 		A5EBFA4616907AA800E003A2 /* DeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfo.m; sourceTree = "<group>"; };
 		A5EBFA4916907B1400E003A2 /* MobileDeviceServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobileDeviceServer.h; sourceTree = "<group>"; };
@@ -279,8 +330,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5E83C6918E1733D00939202 /* libplist.a in Frameworks */,
 				A56D5F791856596500CF815D /* libusbmuxd.a in Frameworks */,
-				A5A1F87C1786D81300DE66C6 /* libimobiledevice.a in Frameworks */,
+				A5A1F87C1786D81300DE66C6 /* libimobiledevice in Frameworks */,
 				A53A3C0C1690794D00C19F81 /* Cocoa.framework in Frameworks */,
 				A586F6271696F82D008E9C21 /* QTKit.framework in Frameworks */,
 			);
@@ -418,6 +470,7 @@
 		A5A1F6531786D7D100DE66C6 /* libimobiledevice */ = {
 			isa = PBXGroup;
 			children = (
+				A5E83B7E18E1731000939202 /* libplist */,
 				A56D5F291856593700CF815D /* libusbmuxd */,
 				A5A1F71F1786D7D100DE66C6 /* libimobiledevice.xcodeproj */,
 			);
@@ -427,7 +480,7 @@
 		A5A1F7201786D7D100DE66C6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A5A1F8411786D7D200DE66C6 /* libimobiledevice.a */,
+				A5A1F8411786D7D200DE66C6 /* libimobiledevice */,
 				A5A1F8431786D7D200DE66C6 /* libimobiledevice.dylib */,
 				A5A1F8451786D7D200DE66C6 /* ideviceclient */,
 				A5A1F8471786D7D200DE66C6 /* afccheck */,
@@ -436,10 +489,12 @@
 				A5A1F84D1786D7D200DE66C6 /* housearresttest */,
 				A5A1F84F1786D7D200DE66C6 /* ideviceheartbeat */,
 				A5A1F8511786D7D200DE66C6 /* idevice_id */,
+				A5E83C5518E1731100939202 /* idevicecrashreport */,
 				A5A1F8531786D7D200DE66C6 /* ideviceinfo */,
 				A5A1F8551786D7D200DE66C6 /* ideviceenterrecovery */,
 				A5A1F8571786D7D200DE66C6 /* idevicesyslog */,
 				A5A1F8591786D7D200DE66C6 /* idevicediagnostics */,
+				A5E83C5718E1731100939202 /* idevicename */,
 				A5A1F85B1786D7D200DE66C6 /* idevicepair */,
 				A5A1F85D1786D7D200DE66C6 /* idevicebackup */,
 				A5A1F85F1786D7D200DE66C6 /* idevicebackup2 */,
@@ -450,6 +505,26 @@
 				A5A1F8691786D7D200DE66C6 /* idevicescreenshot */,
 				A507868417C3BBAA00EB0393 /* ideviceexec */,
 				A507868617C3BBAA00EB0393 /* afccl */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A5E83B7E18E1731000939202 /* libplist */ = {
+			isa = PBXGroup;
+			children = (
+				A5E83BB018E1731000939202 /* libplist.xcodeproj */,
+			);
+			name = libplist;
+			path = deps/libplist;
+			sourceTree = "<group>";
+		};
+		A5E83BB118E1731000939202 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A5E83C5D18E1731100939202 /* libplist.a */,
+				A5E83C5F18E1731100939202 /* libplist.dylib */,
+				A5E83C6118E1731100939202 /* libplist++.a */,
+				A5E83C6318E1731100939202 /* libplist++.dylib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -502,6 +577,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				A5E83C6818E1733700939202 /* PBXTargetDependency */,
 				A56D5F781856595A00CF815D /* PBXTargetDependency */,
 				A5A1F87B1786D80200DE66C6 /* PBXTargetDependency */,
 			);
@@ -533,6 +609,10 @@
 				{
 					ProductGroup = A5A1F7201786D7D100DE66C6 /* Products */;
 					ProjectRef = A5A1F71F1786D7D100DE66C6 /* libimobiledevice.xcodeproj */;
+				},
+				{
+					ProductGroup = A5E83BB118E1731000939202 /* Products */;
+					ProjectRef = A5E83BB018E1731000939202 /* libplist.xcodeproj */;
 				},
 				{
 					ProductGroup = A56D5F351856593700CF815D /* Products */;
@@ -589,10 +669,10 @@
 			remoteRef = A56D5F751856593800CF815D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		A5A1F8411786D7D200DE66C6 /* libimobiledevice.a */ = {
+		A5A1F8411786D7D200DE66C6 /* libimobiledevice */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libimobiledevice.a;
+			path = libimobiledevice;
 			remoteRef = A5A1F8401786D7D200DE66C6 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -736,6 +816,48 @@
 			remoteRef = A5A1F8681786D7D200DE66C6 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		A5E83C5518E1731100939202 /* idevicecrashreport */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = idevicecrashreport;
+			remoteRef = A5E83C5418E1731100939202 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A5E83C5718E1731100939202 /* idevicename */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = idevicename;
+			remoteRef = A5E83C5618E1731100939202 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A5E83C5D18E1731100939202 /* libplist.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libplist.a;
+			remoteRef = A5E83C5C18E1731100939202 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A5E83C5F18E1731100939202 /* libplist.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libplist.dylib;
+			remoteRef = A5E83C5E18E1731100939202 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A5E83C6118E1731100939202 /* libplist++.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libplist++.a";
+			remoteRef = A5E83C6018E1731100939202 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A5E83C6318E1731100939202 /* libplist++.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libplist++.dylib";
+			remoteRef = A5E83C6218E1731100939202 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -784,6 +906,11 @@
 			isa = PBXTargetDependency;
 			name = imobiledevice.a;
 			targetProxy = A5A1F87A1786D80200DE66C6 /* PBXContainerItemProxy */;
+		};
+		A5E83C6818E1733700939202 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "libplist-static";
+			targetProxy = A5E83C6718E1733700939202 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -878,12 +1005,14 @@
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/External/libimobiledevice/include\"",
 					"\"$(SRCROOT)/External/libimobiledevice/osx\"",
+					"\"$(SRCROOT)/External/libimobiledevice/deps/libplist/include\"",
 				);
 				INFOPLIST_FILE = Info.plist;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = (
 					"-lcrypto",
 					"-lssl",
+					"-lxml2",
 				);
 				PRODUCT_NAME = "iGadget Manager";
 				WRAPPER_EXTENSION = app;
@@ -902,12 +1031,14 @@
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/External/libimobiledevice/include\"",
 					"\"$(SRCROOT)/External/libimobiledevice/osx\"",
+					"\"$(SRCROOT)/External/libimobiledevice/deps/libplist/include\"",
 				);
 				INFOPLIST_FILE = Info.plist;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = (
 					"-lcrypto",
 					"-lssl",
+					"-lxml2",
 				);
 				PRODUCT_NAME = "iGadget Manager";
 				PROVISIONING_PROFILE = "";
