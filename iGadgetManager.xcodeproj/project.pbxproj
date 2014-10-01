@@ -331,8 +331,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5E83C6918E1733D00939202 /* libplist.a in Frameworks */,
-				A56D5F791856596500CF815D /* libusbmuxd.a in Frameworks */,
 				A5A1F87C1786D81300DE66C6 /* libimobiledevice in Frameworks */,
+				A56D5F791856596500CF815D /* libusbmuxd.a in Frameworks */,
 				A53A3C0C1690794D00C19F81 /* Cocoa.framework in Frameworks */,
 				A586F6271696F82D008E9C21 /* QTKit.framework in Frameworks */,
 			);
@@ -578,8 +578,8 @@
 			);
 			dependencies = (
 				A5E83C6818E1733700939202 /* PBXTargetDependency */,
-				A56D5F781856595A00CF815D /* PBXTargetDependency */,
 				A5A1F87B1786D80200DE66C6 /* PBXTargetDependency */,
+				A56D5F781856595A00CF815D /* PBXTargetDependency */,
 			);
 			name = iGadgetManager;
 			productName = sunfl0wer;
